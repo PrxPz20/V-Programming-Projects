@@ -139,6 +139,7 @@ namespace week3_v2
             this.ingredientGroupBox.Controls.Add(this.extra_cheeseCheckBox);
             this.ingredientGroupBox.Controls.Add(this.onionCheckBox);
             this.ingredientGroupBox.Controls.Add(this.PepperoniCheckBox);
+            this.ingredientGroupBox.Enabled = false;
             this.ingredientGroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ingredientGroupBox.Location = new System.Drawing.Point(12, 255);
             this.ingredientGroupBox.Name = "ingredientGroupBox";
@@ -146,7 +147,6 @@ namespace week3_v2
             this.ingredientGroupBox.TabIndex = 3;
             this.ingredientGroupBox.TabStop = false;
             this.ingredientGroupBox.Text = "Ingredients";
-            this.ingredientGroupBox.Visible = false;
             // 
             // pineappleCheckBox
             // 
