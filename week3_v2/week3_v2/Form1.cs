@@ -24,18 +24,31 @@ namespace week3_v2
 
         private void LargeRadioButton_MouseHover(object sender, EventArgs e) { toolTip1.Show("up to 4 ingredients for free", smallRadioButton); }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
+        private void button1_Click(object sender, EventArgs e) {
             MessageBox.Show($"Pizza size: {Small_pizza_price}\n" + "Ingredients: -----","Order Summary", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        }
 
+        private void sizeRadioButton_CheckedChanged(object sender, EventArgs e) {
+
+            
+        }
+
+        private void sizeClicked(object sender, EventArgs e)
+        {
+            ingredientGroupBox.Enabled = true;
+            free_top_upLabel.Visible = true;
+            free_top_upLabel.Text = "Free Ingredients: ";
         }
     } // 
-
 } // END of  week3_v2
 
 /*
  * NOTES:
  *  first param = Message to the user, second param = Window Name, 
  * MessageBox.Show Method (String, String, MessageBoxButtons, MessageBoxIcon)
+ * 
+ *         private void smallRadioButton_CheckedChanged(object sender, EventArgs e) {
+            if (smallRadioButton.Checked == true)
+                ingredientGroupBox.Enabled = true;
+        }
  */

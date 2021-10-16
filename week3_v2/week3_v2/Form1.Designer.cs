@@ -46,6 +46,7 @@ namespace week3_v2
             this.onionCheckBox = new System.Windows.Forms.CheckBox();
             this.PepperoniCheckBox = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.free_top_upLabel = new System.Windows.Forms.Label();
             this.sizeGroupBox.SuspendLayout();
             this.ingredientGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -104,6 +105,8 @@ namespace week3_v2
             this.LargeRadioButton.TabStop = true;
             this.LargeRadioButton.Text = "Large       $15.00";
             this.LargeRadioButton.UseVisualStyleBackColor = true;
+            this.LargeRadioButton.CheckedChanged += new System.EventHandler(this.sizeRadioButton_CheckedChanged);
+            this.LargeRadioButton.Click += new System.EventHandler(this.sizeClicked);
             this.LargeRadioButton.MouseHover += new System.EventHandler(this.LargeRadioButton_MouseHover);
             // 
             // smallRadioButton
@@ -116,6 +119,8 @@ namespace week3_v2
             this.smallRadioButton.TabStop = true;
             this.smallRadioButton.Text = "Small       $5.50";
             this.smallRadioButton.UseVisualStyleBackColor = true;
+            this.smallRadioButton.CheckedChanged += new System.EventHandler(this.sizeRadioButton_CheckedChanged);
+            this.smallRadioButton.Click += new System.EventHandler(this.sizeClicked);
             this.smallRadioButton.MouseHover += new System.EventHandler(this.smallRadioButton_MouseHover);
             // 
             // mediumRadioButton
@@ -128,6 +133,8 @@ namespace week3_v2
             this.mediumRadioButton.TabStop = true;
             this.mediumRadioButton.Text = "Medium  $11.75";
             this.mediumRadioButton.UseVisualStyleBackColor = true;
+            this.mediumRadioButton.CheckedChanged += new System.EventHandler(this.sizeRadioButton_CheckedChanged);
+            this.mediumRadioButton.Click += new System.EventHandler(this.sizeClicked);
             this.mediumRadioButton.MouseHover += new System.EventHandler(this.mediumRadioButton_MouseHover);
             // 
             // ingredientGroupBox
@@ -217,11 +224,23 @@ namespace week3_v2
             this.PepperoniCheckBox.Text = "Pepperoni";
             this.PepperoniCheckBox.UseVisualStyleBackColor = true;
             // 
+            // free_top_upLabel
+            // 
+            this.free_top_upLabel.AutoSize = true;
+            this.free_top_upLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.free_top_upLabel.Location = new System.Drawing.Point(121, 243);
+            this.free_top_upLabel.Name = "free_top_upLabel";
+            this.free_top_upLabel.Size = new System.Drawing.Size(50, 20);
+            this.free_top_upLabel.TabIndex = 4;
+            this.free_top_upLabel.Text = "label4";
+            this.free_top_upLabel.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(490, 579);
+            this.Controls.Add(this.free_top_upLabel);
             this.Controls.Add(this.ingredientGroupBox);
             this.Controls.Add(this.sizeGroupBox);
             this.Controls.Add(this.label1);
@@ -255,6 +274,7 @@ namespace week3_v2
         private System.Windows.Forms.CheckBox pineappleCheckBox;
         private System.Windows.Forms.CheckBox mushroomCheckBox;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label free_top_upLabel;
     }
 }
 
