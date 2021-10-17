@@ -47,14 +47,18 @@ namespace week3_v2
             this.PepperoniCheckBox = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.free_top_upLabel = new System.Windows.Forms.Label();
+            this.priceLabel = new System.Windows.Forms.Label();
+            this.deliveryTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.testLabel = new System.Windows.Forms.Label();
             this.sizeGroupBox.SuspendLayout();
             this.ingredientGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // orderButton
             // 
+            this.orderButton.Enabled = false;
             this.orderButton.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.orderButton.Location = new System.Drawing.Point(141, 505);
+            this.orderButton.Location = new System.Drawing.Point(67, 504);
             this.orderButton.Name = "orderButton";
             this.orderButton.Size = new System.Drawing.Size(167, 47);
             this.orderButton.TabIndex = 0;
@@ -164,6 +168,7 @@ namespace week3_v2
             this.pineappleCheckBox.TabIndex = 6;
             this.pineappleCheckBox.Text = "Pineapple";
             this.pineappleCheckBox.UseVisualStyleBackColor = true;
+            this.pineappleCheckBox.Click += new System.EventHandler(this.ingredientChecked);
             // 
             // mushroomCheckBox
             // 
@@ -174,6 +179,7 @@ namespace week3_v2
             this.mushroomCheckBox.TabIndex = 5;
             this.mushroomCheckBox.Text = "Mushroom";
             this.mushroomCheckBox.UseVisualStyleBackColor = true;
+            this.mushroomCheckBox.Click += new System.EventHandler(this.ingredientChecked);
             // 
             // label3
             // 
@@ -193,6 +199,7 @@ namespace week3_v2
             this.black_olivesCheckBox.TabIndex = 3;
             this.black_olivesCheckBox.Text = "Black Olives";
             this.black_olivesCheckBox.UseVisualStyleBackColor = true;
+            this.black_olivesCheckBox.Click += new System.EventHandler(this.ingredientChecked);
             // 
             // extra_cheeseCheckBox
             // 
@@ -203,6 +210,7 @@ namespace week3_v2
             this.extra_cheeseCheckBox.TabIndex = 2;
             this.extra_cheeseCheckBox.Text = "Extra Cheese";
             this.extra_cheeseCheckBox.UseVisualStyleBackColor = true;
+            this.extra_cheeseCheckBox.Click += new System.EventHandler(this.ingredientChecked);
             // 
             // onionCheckBox
             // 
@@ -213,6 +221,7 @@ namespace week3_v2
             this.onionCheckBox.TabIndex = 1;
             this.onionCheckBox.Text = "Onion";
             this.onionCheckBox.UseVisualStyleBackColor = true;
+            this.onionCheckBox.Click += new System.EventHandler(this.ingredientChecked);
             // 
             // PepperoniCheckBox
             // 
@@ -223,6 +232,7 @@ namespace week3_v2
             this.PepperoniCheckBox.TabIndex = 0;
             this.PepperoniCheckBox.Text = "Pepperoni";
             this.PepperoniCheckBox.UseVisualStyleBackColor = true;
+            this.PepperoniCheckBox.Click += new System.EventHandler(this.ingredientChecked);
             // 
             // free_top_upLabel
             // 
@@ -235,11 +245,42 @@ namespace week3_v2
             this.free_top_upLabel.Text = "label4";
             this.free_top_upLabel.Visible = false;
             // 
+            // priceLabel
+            // 
+            this.priceLabel.AutoSize = true;
+            this.priceLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.priceLabel.Location = new System.Drawing.Point(228, 470);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(50, 20);
+            this.priceLabel.TabIndex = 5;
+            this.priceLabel.Text = "label4";
+            // 
+            // deliveryTextBox
+            // 
+            this.deliveryTextBox.Enabled = false;
+            this.deliveryTextBox.Location = new System.Drawing.Point(293, 113);
+            this.deliveryTextBox.Name = "deliveryTextBox";
+            this.deliveryTextBox.Size = new System.Drawing.Size(100, 23);
+            this.deliveryTextBox.TabIndex = 7;
+            this.deliveryTextBox.Text = "_ _ _";
+            // 
+            // testLabel
+            // 
+            this.testLabel.AutoSize = true;
+            this.testLabel.Location = new System.Drawing.Point(316, 211);
+            this.testLabel.Name = "testLabel";
+            this.testLabel.Size = new System.Drawing.Size(38, 15);
+            this.testLabel.TabIndex = 8;
+            this.testLabel.Text = "label4";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 579);
+            this.ClientSize = new System.Drawing.Size(405, 579);
+            this.Controls.Add(this.testLabel);
+            this.Controls.Add(this.deliveryTextBox);
+            this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.free_top_upLabel);
             this.Controls.Add(this.ingredientGroupBox);
             this.Controls.Add(this.sizeGroupBox);
@@ -275,6 +316,9 @@ namespace week3_v2
         private System.Windows.Forms.CheckBox mushroomCheckBox;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label free_top_upLabel;
+        private System.Windows.Forms.Label priceLabel;
+        private System.Windows.Forms.MaskedTextBox deliveryTextBox;
+        private System.Windows.Forms.Label testLabel;
     }
 }
 
