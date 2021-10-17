@@ -19,7 +19,7 @@ namespace week3_v2
         private const double extra_ingredient = 0.75;
         private int free_ingredients = 0;
         private double pizza_price = 0;
-        private int count = 0;
+        private int count = 1;
         
 
         private void smallRadioButton_MouseHover(object sender, EventArgs e) {toolTip1.Show("up to 2 ingredients for free",smallRadioButton); }
@@ -62,13 +62,23 @@ namespace week3_v2
             // if ... == false count--
             
             deliveryTextBox.Enabled = true;
-            count += 1;
+            //count += 1;
             testLabel.Text = "CHECKED " + count;
 
-         
-            
-        }
+            if (PepperoniCheckBox.CheckState == CheckState.Unchecked)
+                count -= 1;
+            else if (onionCheckBox.Checked)
+                count -= 1;
+            else if (black_olivesCheckBox.Checked)
+                count -= 1;
+            else if (mushroomCheckBox.Checked)
+                count -= 1;
+            else if (pineappleCheckBox.Checked)
+                count -= 1;
+            else if (extra_cheeseCheckBox.Checked)
+                count -= 1;
 
+        }
 
     } // 
 } // END of  week3_v2
@@ -82,4 +92,5 @@ namespace week3_v2
             if (smallRadioButton.Checked == true)
                 ingredientGroupBox.Enabled = true;
         }
+
  */
