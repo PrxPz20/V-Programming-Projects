@@ -169,7 +169,6 @@ namespace week3_v2
             this.pineappleCheckBox.Text = "Pineapple";
             this.pineappleCheckBox.UseVisualStyleBackColor = true;
             this.pineappleCheckBox.CheckedChanged += new System.EventHandler(this.Uncheck_state);
-            this.pineappleCheckBox.Click += new System.EventHandler(this.ingredientChecked);
             // 
             // mushroomCheckBox
             // 
@@ -201,7 +200,6 @@ namespace week3_v2
             this.black_olivesCheckBox.Text = "Black Olives";
             this.black_olivesCheckBox.UseVisualStyleBackColor = true;
             this.black_olivesCheckBox.CheckedChanged += new System.EventHandler(this.Uncheck_state);
-            this.black_olivesCheckBox.Click += new System.EventHandler(this.ingredientChecked);
             // 
             // extra_cheeseCheckBox
             // 
@@ -213,7 +211,6 @@ namespace week3_v2
             this.extra_cheeseCheckBox.Text = "Extra Cheese";
             this.extra_cheeseCheckBox.UseVisualStyleBackColor = true;
             this.extra_cheeseCheckBox.CheckedChanged += new System.EventHandler(this.Uncheck_state);
-            this.extra_cheeseCheckBox.Click += new System.EventHandler(this.ingredientChecked);
             // 
             // onionCheckBox
             // 
@@ -225,7 +222,6 @@ namespace week3_v2
             this.onionCheckBox.Text = "Onion";
             this.onionCheckBox.UseVisualStyleBackColor = true;
             this.onionCheckBox.CheckedChanged += new System.EventHandler(this.Uncheck_state);
-            this.onionCheckBox.Click += new System.EventHandler(this.ingredientChecked);
             // 
             // PepperoniCheckBox
             // 
@@ -237,7 +233,6 @@ namespace week3_v2
             this.PepperoniCheckBox.Text = "Pepperoni";
             this.PepperoniCheckBox.UseVisualStyleBackColor = true;
             this.PepperoniCheckBox.CheckedChanged += new System.EventHandler(this.Uncheck_state);
-            this.PepperoniCheckBox.Click += new System.EventHandler(this.ingredientChecked);
             // 
             // free_top_upLabel
             // 

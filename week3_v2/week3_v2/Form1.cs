@@ -13,14 +13,14 @@ namespace week3_v2
     public partial class Form1 : Form {
         public Form1() { InitializeComponent(); }
 
+
         private const double Small_pizza_price = 5.50;
         private const double Medium_pizza_price = 11.75;
         private const double Large_pizza_price = 15.00;
         private const double extra_ingredient = 0.75;
         private int free_ingredients = 0;
         private double pizza_price = 0;
-
-        private int count = 0;  // test IT WILL BE DELETED
+        private int ingredientsSelected = 0;
         
 
         private void smallRadioButton_MouseHover(object sender, EventArgs e) {toolTip1.Show("up to 2 ingredients for free",smallRadioButton); }
@@ -36,14 +36,17 @@ namespace week3_v2
         private void sizeRadioButton_CheckedChanged(object sender, EventArgs e)
         {
 
+            // Small: up to 2 ingredients for free
             if (smallRadioButton.Checked) {
                 free_ingredients = 2;
                 pizza_price = Small_pizza_price;
             }
+            // Medium: up to 3 ingredients for free
             else if (mediumRadioButton.Checked == true) {
                 free_ingredients = 3;
                 pizza_price = Medium_pizza_price;
             }
+            // Large: up to 4 ingredients for free
             else {
                 free_ingredients = 4;
                 pizza_price = Large_pizza_price;
@@ -53,33 +56,31 @@ namespace week3_v2
             ingredientGroupBox.Enabled = true;
             orderButton.Enabled = true;
             free_top_upLabel.Visible = true;
-            free_top_upLabel.Text = "Free Ingredients: " + free_ingredients;
+
+            if (free_ingredients < 0)
+                free_top_upLabel.Text = "Free Ingredients: " + free_ingredients;
+            else
+                free_top_upLabel.Text = "Free Ingredients: 0";
+
             priceLabel.Text = "€ " + pizza_price;
-        }
-
-        private void ingredientChecked(object sender, EventArgs e) {
-
-            
-            deliveryTextBox.Enabled = true;
-            count += 1;
-            testLabel.Text = "CHECKED " + count;    // test IT WILL BE DELETED
-            // DELETE THIS FUCTION
         }
 
         private void Uncheck_state(object sender, EventArgs e)
         {
             var checkbox = (sender as CheckBox);
 
-            MessageBox.Show(checkbox.Text + " : " + checkbox.Checked);
+            //MessageBox.Show(checkbox.Text + " : " + checkbox.Checked);
 
-            if (checkbox.Checked == false)
-            {
-                count -= 1;
-                
+            if (checkbox.Checked == false) {
+                ingredientsSelected -= 1;
+                 
+                // if sta
             }
-            else
-                count += 1;
-                testLabel.Text = "CHECKED " + count;    // test IT WILL BE DELETED
+            else {
+                ingredientsSelected += 1;
+                free_ingredients -= 1;
+            }
+            testLabel.Text = "CHECKED " + ingredientsSelected;    // test IT WILL BE DELETED
 
         }
 
