@@ -54,7 +54,7 @@ namespace week3_v2
             orderButton.Enabled = true;
             free_top_upLabel.Visible = true;
             free_top_upLabel.Text = "Free Ingredients: " + free_ingredients;
-            priceLabel.Text = "" + pizza_price;
+            priceLabel.Text = "€ " + pizza_price;
         }
 
         private void ingredientChecked(object sender, EventArgs e) {

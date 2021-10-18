@@ -107,7 +107,7 @@ namespace week3_v2
             this.LargeRadioButton.Size = new System.Drawing.Size(143, 25);
             this.LargeRadioButton.TabIndex = 7;
             this.LargeRadioButton.TabStop = true;
-            this.LargeRadioButton.Text = "Large       $15.00";
+            this.LargeRadioButton.Text = "Large       €15.00";
             this.LargeRadioButton.UseVisualStyleBackColor = true;
             this.LargeRadioButton.CheckedChanged += new System.EventHandler(this.sizeRadioButton_CheckedChanged);
             this.LargeRadioButton.Click += new System.EventHandler(this.sizeClicked);
@@ -121,7 +121,7 @@ namespace week3_v2
             this.smallRadioButton.Size = new System.Drawing.Size(134, 25);
             this.smallRadioButton.TabIndex = 5;
             this.smallRadioButton.TabStop = true;
-            this.smallRadioButton.Text = "Small       $5.50";
+            this.smallRadioButton.Text = "Small       €5.50";
             this.smallRadioButton.UseVisualStyleBackColor = true;
             this.smallRadioButton.CheckedChanged += new System.EventHandler(this.sizeRadioButton_CheckedChanged);
             this.smallRadioButton.Click += new System.EventHandler(this.sizeClicked);
@@ -135,7 +135,7 @@ namespace week3_v2
             this.mediumRadioButton.Size = new System.Drawing.Size(142, 25);
             this.mediumRadioButton.TabIndex = 6;
             this.mediumRadioButton.TabStop = true;
-            this.mediumRadioButton.Text = "Medium  $11.75";
+            this.mediumRadioButton.Text = "Medium  €11.75";
             this.mediumRadioButton.UseVisualStyleBackColor = true;
             this.mediumRadioButton.CheckedChanged += new System.EventHandler(this.sizeRadioButton_CheckedChanged);
             this.mediumRadioButton.Click += new System.EventHandler(this.sizeClicked);
@@ -240,20 +240,20 @@ namespace week3_v2
             this.free_top_upLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.free_top_upLabel.Location = new System.Drawing.Point(121, 243);
             this.free_top_upLabel.Name = "free_top_upLabel";
-            this.free_top_upLabel.Size = new System.Drawing.Size(50, 20);
+            this.free_top_upLabel.Size = new System.Drawing.Size(75, 20);
             this.free_top_upLabel.TabIndex = 4;
-            this.free_top_upLabel.Text = "label4";
+            this.free_top_upLabel.Text = "free_ingre";
             this.free_top_upLabel.Visible = false;
             // 
             // priceLabel
             // 
             this.priceLabel.AutoSize = true;
-            this.priceLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.priceLabel.Location = new System.Drawing.Point(228, 470);
+            this.priceLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.priceLabel.Location = new System.Drawing.Point(227, 460);
             this.priceLabel.Name = "priceLabel";
-            this.priceLabel.Size = new System.Drawing.Size(50, 20);
+            this.priceLabel.Size = new System.Drawing.Size(66, 32);
             this.priceLabel.TabIndex = 5;
-            this.priceLabel.Text = "label4";
+            this.priceLabel.Text = "price";
             // 
             // deliveryTextBox
             // 
@@ -269,9 +269,9 @@ namespace week3_v2
             this.testLabel.AutoSize = true;
             this.testLabel.Location = new System.Drawing.Point(316, 211);
             this.testLabel.Name = "testLabel";
-            this.testLabel.Size = new System.Drawing.Size(38, 15);
+            this.testLabel.Size = new System.Drawing.Size(26, 15);
             this.testLabel.TabIndex = 8;
-            this.testLabel.Text = "label4";
+            this.testLabel.Text = "test";
             // 
             // Form1
             // 
