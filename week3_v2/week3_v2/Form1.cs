@@ -19,7 +19,8 @@ namespace week3_v2
         private const double extra_ingredient = 0.75;
         private int free_ingredients = 0;
         private double pizza_price = 0;
-        private int count = 1;
+
+        private int count = 0;  // test IT WILL BE DELETED
         
 
         private void smallRadioButton_MouseHover(object sender, EventArgs e) {toolTip1.Show("up to 2 ingredients for free",smallRadioButton); }
@@ -43,7 +44,6 @@ namespace week3_v2
                 free_ingredients = 3;
                 pizza_price = Medium_pizza_price;
             }
-
             else {
                 free_ingredients = 4;
                 pizza_price = Large_pizza_price;
@@ -58,27 +58,32 @@ namespace week3_v2
         }
 
         private void ingredientChecked(object sender, EventArgs e) {
-            // if (deliveryTextBox.Enabled == true) { count++; testLabel.Text = "CHECKED" + count; }
-            // if ... == false count--
+
             
             deliveryTextBox.Enabled = true;
-            //count += 1;
-            testLabel.Text = "CHECKED " + count;
+            count += 1;
+            testLabel.Text = "CHECKED " + count;    // test IT WILL BE DELETED
+            // DELETE THIS FUCTION
+        }
 
-            if (PepperoniCheckBox.CheckState == CheckState.Unchecked)
+        private void Uncheck_state(object sender, EventArgs e)
+        {
+            var checkbox = (sender as CheckBox);
+
+            MessageBox.Show(checkbox.Text + " : " + checkbox.Checked);
+
+            if (checkbox.Checked == false)
+            {
                 count -= 1;
-            else if (onionCheckBox.Checked)
-                count -= 1;
-            else if (black_olivesCheckBox.Checked)
-                count -= 1;
-            else if (mushroomCheckBox.Checked)
-                count -= 1;
-            else if (pineappleCheckBox.Checked)
-                count -= 1;
-            else if (extra_cheeseCheckBox.Checked)
-                count -= 1;
+                
+            }
+            else
+                count += 1;
+                testLabel.Text = "CHECKED " + count;    // test IT WILL BE DELETED
 
         }
+
+
 
     } // 
 } // END of  week3_v2
@@ -93,4 +98,19 @@ namespace week3_v2
                 ingredientGroupBox.Enabled = true;
         }
 
+            if (PepperoniCheckBox.CheckState == CheckState.Unchecked)
+                count -= 1;
+            else if (onionCheckBox.Checked)
+                count -= 1;
+            else if (black_olivesCheckBox.Checked)
+                count -= 1;
+            else if (mushroomCheckBox.Checked)
+                count -= 1;
+            else if (pineappleCheckBox.Checked)
+                count -= 1;
+            else if (extra_cheeseCheckBox.Checked)
+                count -= 1;
+
+            // if (deliveryTextBox.Enabled == true) { count++; testLabel.Text = "CHECKED" + count; }
+            // if ... == false count--
  */

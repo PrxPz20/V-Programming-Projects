@@ -104,10 +104,10 @@ namespace week3_v2
             this.LargeRadioButton.AutoSize = true;
             this.LargeRadioButton.Location = new System.Drawing.Point(6, 120);
             this.LargeRadioButton.Name = "LargeRadioButton";
-            this.LargeRadioButton.Size = new System.Drawing.Size(143, 25);
+            this.LargeRadioButton.Size = new System.Drawing.Size(147, 25);
             this.LargeRadioButton.TabIndex = 7;
             this.LargeRadioButton.TabStop = true;
-            this.LargeRadioButton.Text = "Large       €15.00";
+            this.LargeRadioButton.Text = "Large       € 15.00";
             this.LargeRadioButton.UseVisualStyleBackColor = true;
             this.LargeRadioButton.CheckedChanged += new System.EventHandler(this.sizeRadioButton_CheckedChanged);
             this.LargeRadioButton.Click += new System.EventHandler(this.sizeClicked);
@@ -118,10 +118,10 @@ namespace week3_v2
             this.smallRadioButton.AutoSize = true;
             this.smallRadioButton.Location = new System.Drawing.Point(6, 58);
             this.smallRadioButton.Name = "smallRadioButton";
-            this.smallRadioButton.Size = new System.Drawing.Size(134, 25);
+            this.smallRadioButton.Size = new System.Drawing.Size(138, 25);
             this.smallRadioButton.TabIndex = 5;
             this.smallRadioButton.TabStop = true;
-            this.smallRadioButton.Text = "Small       €5.50";
+            this.smallRadioButton.Text = "Small       € 5.50";
             this.smallRadioButton.UseVisualStyleBackColor = true;
             this.smallRadioButton.CheckedChanged += new System.EventHandler(this.sizeRadioButton_CheckedChanged);
             this.smallRadioButton.Click += new System.EventHandler(this.sizeClicked);
@@ -132,10 +132,10 @@ namespace week3_v2
             this.mediumRadioButton.AutoSize = true;
             this.mediumRadioButton.Location = new System.Drawing.Point(6, 89);
             this.mediumRadioButton.Name = "mediumRadioButton";
-            this.mediumRadioButton.Size = new System.Drawing.Size(142, 25);
+            this.mediumRadioButton.Size = new System.Drawing.Size(146, 25);
             this.mediumRadioButton.TabIndex = 6;
             this.mediumRadioButton.TabStop = true;
-            this.mediumRadioButton.Text = "Medium  €11.75";
+            this.mediumRadioButton.Text = "Medium  € 11.75";
             this.mediumRadioButton.UseVisualStyleBackColor = true;
             this.mediumRadioButton.CheckedChanged += new System.EventHandler(this.sizeRadioButton_CheckedChanged);
             this.mediumRadioButton.Click += new System.EventHandler(this.sizeClicked);
@@ -168,6 +168,7 @@ namespace week3_v2
             this.pineappleCheckBox.TabIndex = 6;
             this.pineappleCheckBox.Text = "Pineapple";
             this.pineappleCheckBox.UseVisualStyleBackColor = true;
+            this.pineappleCheckBox.CheckedChanged += new System.EventHandler(this.Uncheck_state);
             this.pineappleCheckBox.Click += new System.EventHandler(this.ingredientChecked);
             // 
             // mushroomCheckBox
@@ -179,7 +180,7 @@ namespace week3_v2
             this.mushroomCheckBox.TabIndex = 5;
             this.mushroomCheckBox.Text = "Mushroom";
             this.mushroomCheckBox.UseVisualStyleBackColor = true;
-            this.mushroomCheckBox.Click += new System.EventHandler(this.ingredientChecked);
+            this.mushroomCheckBox.CheckedChanged += new System.EventHandler(this.Uncheck_state);
             // 
             // label3
             // 
@@ -199,6 +200,7 @@ namespace week3_v2
             this.black_olivesCheckBox.TabIndex = 3;
             this.black_olivesCheckBox.Text = "Black Olives";
             this.black_olivesCheckBox.UseVisualStyleBackColor = true;
+            this.black_olivesCheckBox.CheckedChanged += new System.EventHandler(this.Uncheck_state);
             this.black_olivesCheckBox.Click += new System.EventHandler(this.ingredientChecked);
             // 
             // extra_cheeseCheckBox
@@ -210,6 +212,7 @@ namespace week3_v2
             this.extra_cheeseCheckBox.TabIndex = 2;
             this.extra_cheeseCheckBox.Text = "Extra Cheese";
             this.extra_cheeseCheckBox.UseVisualStyleBackColor = true;
+            this.extra_cheeseCheckBox.CheckedChanged += new System.EventHandler(this.Uncheck_state);
             this.extra_cheeseCheckBox.Click += new System.EventHandler(this.ingredientChecked);
             // 
             // onionCheckBox
@@ -221,6 +224,7 @@ namespace week3_v2
             this.onionCheckBox.TabIndex = 1;
             this.onionCheckBox.Text = "Onion";
             this.onionCheckBox.UseVisualStyleBackColor = true;
+            this.onionCheckBox.CheckedChanged += new System.EventHandler(this.Uncheck_state);
             this.onionCheckBox.Click += new System.EventHandler(this.ingredientChecked);
             // 
             // PepperoniCheckBox
@@ -232,6 +236,7 @@ namespace week3_v2
             this.PepperoniCheckBox.TabIndex = 0;
             this.PepperoniCheckBox.Text = "Pepperoni";
             this.PepperoniCheckBox.UseVisualStyleBackColor = true;
+            this.PepperoniCheckBox.CheckedChanged += new System.EventHandler(this.Uncheck_state);
             this.PepperoniCheckBox.Click += new System.EventHandler(this.ingredientChecked);
             // 
             // free_top_upLabel
@@ -249,7 +254,7 @@ namespace week3_v2
             // 
             this.priceLabel.AutoSize = true;
             this.priceLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.priceLabel.Location = new System.Drawing.Point(227, 460);
+            this.priceLabel.Location = new System.Drawing.Point(12, 460);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.Size = new System.Drawing.Size(66, 32);
             this.priceLabel.TabIndex = 5;
@@ -259,10 +264,11 @@ namespace week3_v2
             // 
             this.deliveryTextBox.Enabled = false;
             this.deliveryTextBox.Location = new System.Drawing.Point(293, 113);
+            this.deliveryTextBox.Mask = "00:00";
             this.deliveryTextBox.Name = "deliveryTextBox";
-            this.deliveryTextBox.Size = new System.Drawing.Size(100, 23);
+            this.deliveryTextBox.Size = new System.Drawing.Size(65, 23);
             this.deliveryTextBox.TabIndex = 7;
-            this.deliveryTextBox.Text = "_ _ _";
+            this.deliveryTextBox.ValidatingType = typeof(System.DateTime);
             // 
             // testLabel
             // 
@@ -287,7 +293,7 @@ namespace week3_v2
             this.Controls.Add(this.label1);
             this.Controls.Add(this.orderButton);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Pizza App";
             this.sizeGroupBox.ResumeLayout(false);
             this.sizeGroupBox.PerformLayout();
             this.ingredientGroupBox.ResumeLayout(false);
