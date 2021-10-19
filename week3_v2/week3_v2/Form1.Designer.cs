@@ -52,8 +52,10 @@ namespace week3_v2
             this.deliveryMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.testLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sizeGroupBox.SuspendLayout();
             this.ingredientGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // orderButton
@@ -71,10 +73,10 @@ namespace week3_v2
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 30);
+            this.label1.Size = new System.Drawing.Size(303, 40);
             this.label1.TabIndex = 1;
             this.label1.Text = "Welcome to Pizza App";
             // 
@@ -275,6 +277,7 @@ namespace week3_v2
             this.deliveryMaskedTextBox.Size = new System.Drawing.Size(65, 25);
             this.deliveryMaskedTextBox.TabIndex = 7;
             this.deliveryMaskedTextBox.ValidatingType = typeof(System.DateTime);
+            this.deliveryMaskedTextBox.TypeValidationCompleted += new System.Windows.Forms.TypeValidationEventHandler(this.deliveryMaskedTextBox_TypeValidationCompleted);
             // 
             // testLabel
             // 
@@ -295,11 +298,22 @@ namespace week3_v2
             this.label5.TabIndex = 9;
             this.label5.Text = "Total:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::week3_v2.Properties.Resources.Pizza_Image_logo;
+            this.pictureBox1.Location = new System.Drawing.Point(316, -8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(74, 79);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(405, 579);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.testLabel);
             this.Controls.Add(this.deliveryMaskedTextBox);
@@ -315,6 +329,7 @@ namespace week3_v2
             this.sizeGroupBox.PerformLayout();
             this.ingredientGroupBox.ResumeLayout(false);
             this.ingredientGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -344,6 +359,7 @@ namespace week3_v2
         private System.Windows.Forms.Label testLabel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

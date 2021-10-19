@@ -30,7 +30,6 @@ namespace week3_v2
         }
 
 
-
         // This Fuction prints the total pizza price
         private void updatePizzaPrice() { priceLabel.Text = $"€ {totalPizzaPrice}"; }
 
@@ -101,10 +100,16 @@ namespace week3_v2
 
 
             updatePizzaPrice();
-            testLabel.Text = "CHECKED " + ingredientsSelected;    // test IT WILL BE DELETED
+            //testLabel.Text = "CHECKED " + ingredientsSelected;    // test IT WILL BE DELETED
 
         }
 
+        private void deliveryMaskedTextBox_TypeValidationCompleted(object sender, TypeValidationEventArgs e) {
+
+            var deliveryTime = (sender as MaskedTextBox);
+            //var time = 
+            //if(deliveryTime < DateTime.Now)
+        }
     } // 
 } // END of  week3_v2
 
