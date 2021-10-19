@@ -38,6 +38,7 @@ namespace week3_v2
             this.smallRadioButton = new System.Windows.Forms.RadioButton();
             this.mediumRadioButton = new System.Windows.Forms.RadioButton();
             this.ingredientGroupBox = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.pineappleCheckBox = new System.Windows.Forms.CheckBox();
             this.mushroomCheckBox = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,8 +49,9 @@ namespace week3_v2
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.free_top_upLabel = new System.Windows.Forms.Label();
             this.priceLabel = new System.Windows.Forms.Label();
-            this.deliveryTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.deliveryMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.testLabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.sizeGroupBox.SuspendLayout();
             this.ingredientGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +66,7 @@ namespace week3_v2
             this.orderButton.TabIndex = 0;
             this.orderButton.Text = "Order";
             this.orderButton.UseVisualStyleBackColor = true;
-            this.orderButton.Click += new System.EventHandler(this.button1_Click);
+            this.orderButton.Click += new System.EventHandler(this.orderButton_Click);
             // 
             // label1
             // 
@@ -106,7 +108,6 @@ namespace week3_v2
             this.LargeRadioButton.Name = "LargeRadioButton";
             this.LargeRadioButton.Size = new System.Drawing.Size(147, 25);
             this.LargeRadioButton.TabIndex = 7;
-            this.LargeRadioButton.TabStop = true;
             this.LargeRadioButton.Text = "Large       € 15.00";
             this.LargeRadioButton.UseVisualStyleBackColor = true;
             this.LargeRadioButton.CheckedChanged += new System.EventHandler(this.sizeRadioButton_CheckedChanged);
@@ -120,7 +121,6 @@ namespace week3_v2
             this.smallRadioButton.Name = "smallRadioButton";
             this.smallRadioButton.Size = new System.Drawing.Size(138, 25);
             this.smallRadioButton.TabIndex = 5;
-            this.smallRadioButton.TabStop = true;
             this.smallRadioButton.Text = "Small       € 5.50";
             this.smallRadioButton.UseVisualStyleBackColor = true;
             this.smallRadioButton.CheckedChanged += new System.EventHandler(this.sizeRadioButton_CheckedChanged);
@@ -134,7 +134,6 @@ namespace week3_v2
             this.mediumRadioButton.Name = "mediumRadioButton";
             this.mediumRadioButton.Size = new System.Drawing.Size(146, 25);
             this.mediumRadioButton.TabIndex = 6;
-            this.mediumRadioButton.TabStop = true;
             this.mediumRadioButton.Text = "Medium  € 11.75";
             this.mediumRadioButton.UseVisualStyleBackColor = true;
             this.mediumRadioButton.CheckedChanged += new System.EventHandler(this.sizeRadioButton_CheckedChanged);
@@ -143,6 +142,7 @@ namespace week3_v2
             // 
             // ingredientGroupBox
             // 
+            this.ingredientGroupBox.Controls.Add(this.label4);
             this.ingredientGroupBox.Controls.Add(this.pineappleCheckBox);
             this.ingredientGroupBox.Controls.Add(this.mushroomCheckBox);
             this.ingredientGroupBox.Controls.Add(this.label3);
@@ -159,10 +159,19 @@ namespace week3_v2
             this.ingredientGroupBox.TabStop = false;
             this.ingredientGroupBox.Text = "Ingredients";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(30, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(181, 21);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "+ € 0.75 extra ingredient";
+            // 
             // pineappleCheckBox
             // 
             this.pineappleCheckBox.AutoSize = true;
-            this.pineappleCheckBox.Location = new System.Drawing.Point(141, 92);
+            this.pineappleCheckBox.Location = new System.Drawing.Point(141, 110);
             this.pineappleCheckBox.Name = "pineappleCheckBox";
             this.pineappleCheckBox.Size = new System.Drawing.Size(97, 25);
             this.pineappleCheckBox.TabIndex = 6;
@@ -173,7 +182,7 @@ namespace week3_v2
             // mushroomCheckBox
             // 
             this.mushroomCheckBox.AutoSize = true;
-            this.mushroomCheckBox.Location = new System.Drawing.Point(141, 61);
+            this.mushroomCheckBox.Location = new System.Drawing.Point(141, 79);
             this.mushroomCheckBox.Name = "mushroomCheckBox";
             this.mushroomCheckBox.Size = new System.Drawing.Size(106, 25);
             this.mushroomCheckBox.TabIndex = 5;
@@ -193,7 +202,7 @@ namespace week3_v2
             // black_olivesCheckBox
             // 
             this.black_olivesCheckBox.AutoSize = true;
-            this.black_olivesCheckBox.Location = new System.Drawing.Point(6, 123);
+            this.black_olivesCheckBox.Location = new System.Drawing.Point(6, 141);
             this.black_olivesCheckBox.Name = "black_olivesCheckBox";
             this.black_olivesCheckBox.Size = new System.Drawing.Size(112, 25);
             this.black_olivesCheckBox.TabIndex = 3;
@@ -204,7 +213,7 @@ namespace week3_v2
             // extra_cheeseCheckBox
             // 
             this.extra_cheeseCheckBox.AutoSize = true;
-            this.extra_cheeseCheckBox.Location = new System.Drawing.Point(141, 123);
+            this.extra_cheeseCheckBox.Location = new System.Drawing.Point(141, 141);
             this.extra_cheeseCheckBox.Name = "extra_cheeseCheckBox";
             this.extra_cheeseCheckBox.Size = new System.Drawing.Size(117, 25);
             this.extra_cheeseCheckBox.TabIndex = 2;
@@ -215,7 +224,7 @@ namespace week3_v2
             // onionCheckBox
             // 
             this.onionCheckBox.AutoSize = true;
-            this.onionCheckBox.Location = new System.Drawing.Point(6, 92);
+            this.onionCheckBox.Location = new System.Drawing.Point(6, 110);
             this.onionCheckBox.Name = "onionCheckBox";
             this.onionCheckBox.Size = new System.Drawing.Size(72, 25);
             this.onionCheckBox.TabIndex = 1;
@@ -226,7 +235,7 @@ namespace week3_v2
             // PepperoniCheckBox
             // 
             this.PepperoniCheckBox.AutoSize = true;
-            this.PepperoniCheckBox.Location = new System.Drawing.Point(6, 61);
+            this.PepperoniCheckBox.Location = new System.Drawing.Point(6, 79);
             this.PepperoniCheckBox.Name = "PepperoniCheckBox";
             this.PepperoniCheckBox.Size = new System.Drawing.Size(99, 25);
             this.PepperoniCheckBox.TabIndex = 0;
@@ -240,30 +249,32 @@ namespace week3_v2
             this.free_top_upLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.free_top_upLabel.Location = new System.Drawing.Point(121, 243);
             this.free_top_upLabel.Name = "free_top_upLabel";
-            this.free_top_upLabel.Size = new System.Drawing.Size(75, 20);
+            this.free_top_upLabel.Size = new System.Drawing.Size(122, 20);
             this.free_top_upLabel.TabIndex = 4;
-            this.free_top_upLabel.Text = "free_ingre";
+            this.free_top_upLabel.Text = "Free Ingredients: ";
             this.free_top_upLabel.Visible = false;
             // 
             // priceLabel
             // 
             this.priceLabel.AutoSize = true;
             this.priceLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.priceLabel.Location = new System.Drawing.Point(12, 460);
+            this.priceLabel.Location = new System.Drawing.Point(78, 462);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.Size = new System.Drawing.Size(66, 32);
             this.priceLabel.TabIndex = 5;
             this.priceLabel.Text = "price";
+            this.priceLabel.Visible = false;
             // 
-            // deliveryTextBox
+            // deliveryMaskedTextBox
             // 
-            this.deliveryTextBox.Enabled = false;
-            this.deliveryTextBox.Location = new System.Drawing.Point(293, 113);
-            this.deliveryTextBox.Mask = "00:00";
-            this.deliveryTextBox.Name = "deliveryTextBox";
-            this.deliveryTextBox.Size = new System.Drawing.Size(65, 23);
-            this.deliveryTextBox.TabIndex = 7;
-            this.deliveryTextBox.ValidatingType = typeof(System.DateTime);
+            this.deliveryMaskedTextBox.Enabled = false;
+            this.deliveryMaskedTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.deliveryMaskedTextBox.Location = new System.Drawing.Point(205, 471);
+            this.deliveryMaskedTextBox.Mask = "00:00";
+            this.deliveryMaskedTextBox.Name = "deliveryMaskedTextBox";
+            this.deliveryMaskedTextBox.Size = new System.Drawing.Size(65, 25);
+            this.deliveryMaskedTextBox.TabIndex = 7;
+            this.deliveryMaskedTextBox.ValidatingType = typeof(System.DateTime);
             // 
             // testLabel
             // 
@@ -274,13 +285,24 @@ namespace week3_v2
             this.testLabel.TabIndex = 8;
             this.testLabel.Text = "test";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(12, 462);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 32);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Total:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(405, 579);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.testLabel);
-            this.Controls.Add(this.deliveryTextBox);
+            this.Controls.Add(this.deliveryMaskedTextBox);
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.free_top_upLabel);
             this.Controls.Add(this.ingredientGroupBox);
@@ -318,8 +340,10 @@ namespace week3_v2
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label free_top_upLabel;
         private System.Windows.Forms.Label priceLabel;
-        private System.Windows.Forms.MaskedTextBox deliveryTextBox;
+        private System.Windows.Forms.MaskedTextBox deliveryMaskedTextBox;
         private System.Windows.Forms.Label testLabel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
 
