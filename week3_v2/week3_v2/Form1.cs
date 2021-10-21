@@ -34,6 +34,7 @@ namespace week3_v2
         private void updatePizzaPrice() { priceLabel.Text = $"€ {totalPizzaPrice}"; }
 
         private void sizeRadioButton_CheckedChanged(object sender, EventArgs e) {
+
             priceLabel.Visible = true;
             var size = (sender as RadioButton);
             
@@ -106,9 +107,18 @@ namespace week3_v2
 
         private void deliveryMaskedTextBox_TypeValidationCompleted(object sender, TypeValidationEventArgs e) {
 
-            var deliveryTime = (sender as MaskedTextBox);
-            //var time = 
-            //if(deliveryTime < DateTime.Now)
+             var deliveryTime = (sender as MaskedTextBox);
+            DateTime timeNow = DateTime.Now;
+            DateTime deli = DateTime.Parse(deliveryTime.Text);
+
+            if (deli <= timeNow) {
+                MessageBox.Show("Time is not valid, it maybe in the past ");
+                testLabel.Text = " Under the\ntime: " + deli +"\n" + timeNow;
+            }   
+            else
+                testLabel.Text = "The Time is valid" + deli + "\n" + timeNow;
+
+
         }
     } // 
 } // END of  week3_v2
@@ -118,6 +128,4 @@ namespace week3_v2
  *  first param = Message to the user, second param = Window Name, 
  * MessageBox.Show Method (String, String, MessageBoxButtons, MessageBoxIcon)
  * 
-
-
  */
