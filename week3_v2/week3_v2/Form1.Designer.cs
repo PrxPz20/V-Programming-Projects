@@ -53,6 +53,7 @@ namespace week3_v2
             this.testLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.sizeGroupBox.SuspendLayout();
             this.ingredientGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,7 +63,7 @@ namespace week3_v2
             // 
             this.orderButton.Enabled = false;
             this.orderButton.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.orderButton.Location = new System.Drawing.Point(67, 504);
+            this.orderButton.Location = new System.Drawing.Point(111, 554);
             this.orderButton.Name = "orderButton";
             this.orderButton.Size = new System.Drawing.Size(167, 47);
             this.orderButton.TabIndex = 0;
@@ -270,11 +271,11 @@ namespace week3_v2
             // deliveryMaskedTextBox
             // 
             this.deliveryMaskedTextBox.Enabled = false;
-            this.deliveryMaskedTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.deliveryMaskedTextBox.Location = new System.Drawing.Point(205, 471);
+            this.deliveryMaskedTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.deliveryMaskedTextBox.Location = new System.Drawing.Point(179, 506);
             this.deliveryMaskedTextBox.Mask = "00:00";
             this.deliveryMaskedTextBox.Name = "deliveryMaskedTextBox";
-            this.deliveryMaskedTextBox.Size = new System.Drawing.Size(65, 25);
+            this.deliveryMaskedTextBox.Size = new System.Drawing.Size(65, 29);
             this.deliveryMaskedTextBox.TabIndex = 7;
             this.deliveryMaskedTextBox.ValidatingType = typeof(System.DateTime);
             this.deliveryMaskedTextBox.TypeValidationCompleted += new System.Windows.Forms.TypeValidationEventHandler(this.deliveryMaskedTextBox_TypeValidationCompleted);
@@ -282,7 +283,7 @@ namespace week3_v2
             // testLabel
             // 
             this.testLabel.AutoSize = true;
-            this.testLabel.Location = new System.Drawing.Point(316, 211);
+            this.testLabel.Location = new System.Drawing.Point(276, 237);
             this.testLabel.Name = "testLabel";
             this.testLabel.Size = new System.Drawing.Size(26, 15);
             this.testLabel.TabIndex = 8;
@@ -308,11 +309,23 @@ namespace week3_v2
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(12, 503);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(166, 32);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Delivery Time:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(405, 579);
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.ClientSize = new System.Drawing.Size(405, 613);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.testLabel);
@@ -360,6 +373,7 @@ namespace week3_v2
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label6;
     }
 }
 

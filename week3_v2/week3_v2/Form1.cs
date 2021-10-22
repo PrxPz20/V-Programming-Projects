@@ -107,16 +107,16 @@ namespace week3_v2
 
         private void deliveryMaskedTextBox_TypeValidationCompleted(object sender, TypeValidationEventArgs e) {
 
-             var deliveryTime = (sender as MaskedTextBox);
-            DateTime timeNow = DateTime.Now;
-            DateTime deli = DateTime.Parse(deliveryTime.Text);
+            var tempUserDeliveryTime = (sender as MaskedTextBox);
+            DateTime timeNow = DateTime.Now;    // Get the Exact time when the user enters the delivery time
+            DateTime UserDeliveryTime = DateTime.Parse(tempUserDeliveryTime.Text);  // convert time users time to DateTime
 
-            if (deli <= timeNow) {
-                MessageBox.Show("Time is not valid, it maybe in the past ");
-                testLabel.Text = " Under the\ntime: " + deli +"\n" + timeNow;
-            }   
+            if (UserDeliveryTime <= timeNow) {
+                MessageBox.Show($"Time is not valid, it maybe in the past or not real time {UserDeliveryTime.ToShortTimeString()}","Time Error", MessageBoxButtons.OK ,MessageBoxIcon.Error);
+                // TEST testLabel.Text = " Under the\ntime: " + UserDeliveryTime.ToShortTimeString() + "\n" + timeNow.ToShortTimeString(); 
+            }
             else
-                testLabel.Text = "The Time is valid" + deli + "\n" + timeNow;
+                testLabel.Text = "The Time is valid" + UserDeliveryTime + "\n" + timeNow;
 
 
         }
