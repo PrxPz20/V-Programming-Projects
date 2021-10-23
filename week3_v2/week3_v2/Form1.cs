@@ -18,15 +18,16 @@ namespace week3_v2
         private const double mediumPizzaPrice = 11.75;
         private const double largePizzaPrice = 15.00;
         private const double extraIngredient = 0.75;
-        private int freeIngredients = 0;
+        private int freeIngredients = 0;    // this variable, will get it value down at the < sizeRadioButton_CheckedChanged > fuction
         private double totalPizzaPrice = 0;
+        private string saveUsersIngredients = null;
 
         private void smallRadioButton_MouseHover(object sender, EventArgs e) {toolTip1.Show("up to 2 ingredients for free",smallRadioButton); }
         private void mediumRadioButton_MouseHover(object sender, EventArgs e) {toolTip1.Show("up to 3 ingredients for free", mediumRadioButton); }
         private void LargeRadioButton_MouseHover(object sender, EventArgs e) { toolTip1.Show("up to 4 ingredients for free", smallRadioButton); }
 
         private void orderButton_Click(object sender, EventArgs e) {
-            MessageBox.Show("---", "Order Summary", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            MessageBox.Show($"Pizza Size: {smallPizzaPrice}\nIngredients: {saveUsersIngredients}\nTotal Amount: {totalPizzaPrice} ", "Order Summary", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
 
@@ -87,6 +88,7 @@ namespace week3_v2
             else {
                 ingredientsSelected += 1;
                 freeIngredients -= 1;
+                saveUsersIngredients += checkbox.Text + " ";    // Saves users ingredients in string
 
                 // if the user uses all freeIngredients, 0,75 cent will be added to the price
                 if (freeIngredients < 0)
@@ -97,12 +99,10 @@ namespace week3_v2
             if (freeIngredients > 0)
                 free_top_upLabel.Text = $"Free Ingredients: { freeIngredients}";
             else
-                free_top_upLabel.Text = "Free Ingredients: 0";
-
+                free_top_upLabel.Text = "Free Ingredients: 0"; // if the free_top_upLabel under 0 like -1, it will prevent it by showing 0.
 
             updatePizzaPrice();
-            //testLabel.Text = "CHECKED " + ingredientsSelected;    // test IT WILL BE DELETED
-
+            testLabel.Text = "U: " + checkbox.Text;
         }
 
         private void deliveryMaskedTextBox_TypeValidationCompleted(object sender, TypeValidationEventArgs e) {
@@ -118,8 +118,13 @@ namespace week3_v2
             else
                 testLabel.Text = "The Time is valid" + UserDeliveryTime + "\n" + timeNow;
 
-
         }
+
+        // CREATE FUCTION TO ASK THE USER THE "HOME ADDRESS" IN A NEW FORM
+
+
+
+
     } // 
 } // END of  week3_v2
 
