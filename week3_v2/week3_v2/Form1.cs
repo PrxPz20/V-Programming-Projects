@@ -27,13 +27,17 @@ namespace week3_v2
         private void LargeRadioButton_MouseHover(object sender, EventArgs e) { toolTip1.Show("up to 4 ingredients for free", smallRadioButton); }
 
         private void orderButton_Click(object sender, EventArgs e) {
-            
-            DialogResult dialogResult = MessageBox.Show($"Pizza Size: {smallPizzaPrice}\n\nIngredients: {saveUsersIngredients}\n\nTotal Amount: {totalPizzaPrice} ", "Order Summary", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            
-            if (dialogResult == DialogResult.Yes) {
 
+            Form2 f2 = new Form2();
+            f2.ShowDialog();
 
-            }
+            DialogResult dialogResult = MessageBox.Show($"Pizza Size: {smallPizzaPrice}\n\nIngredients: {saveUsersIngredients}\n\nLocation Address: {f2.userLocationAddress}\n\nTotal Amount: {totalPizzaPrice} ", "Order Summary", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
+            if (dialogResult == DialogResult.Yes)
+                this.Close();
+
+            // Display a messange about the dalivery time
+            
         }
 
 
@@ -125,10 +129,6 @@ namespace week3_v2
                 testLabel.Text = "The Time is valid" + UserDeliveryTime + "\n" + timeNow;
 
         }
-
-        // CREATE FUCTION TO ASK THE USER THE "HOME ADDRESS" IN A NEW FORM
-        private void getUserHomeAddress() {   }// code for the new Form Window
-
 
 
     } // 
