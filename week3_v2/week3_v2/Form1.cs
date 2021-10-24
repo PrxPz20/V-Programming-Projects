@@ -27,7 +27,13 @@ namespace week3_v2
         private void LargeRadioButton_MouseHover(object sender, EventArgs e) { toolTip1.Show("up to 4 ingredients for free", smallRadioButton); }
 
         private void orderButton_Click(object sender, EventArgs e) {
-            MessageBox.Show($"Pizza Size: {smallPizzaPrice}\nIngredients: {saveUsersIngredients}\nTotal Amount: {totalPizzaPrice} ", "Order Summary", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
+            DialogResult dialogResult = MessageBox.Show($"Pizza Size: {smallPizzaPrice}\n\nIngredients: {saveUsersIngredients}\n\nTotal Amount: {totalPizzaPrice} ", "Order Summary", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
+            if (dialogResult == DialogResult.Yes) {
+
+
+            }
         }
 
 
@@ -88,7 +94,7 @@ namespace week3_v2
             else {
                 ingredientsSelected += 1;
                 freeIngredients -= 1;
-                saveUsersIngredients += checkbox.Text + " ";    // Saves users ingredients in string
+                saveUsersIngredients += checkbox.Text + ", ";    // Saves users ingredients in string
 
                 // if the user uses all freeIngredients, 0,75 cent will be added to the price
                 if (freeIngredients < 0)
@@ -121,7 +127,7 @@ namespace week3_v2
         }
 
         // CREATE FUCTION TO ASK THE USER THE "HOME ADDRESS" IN A NEW FORM
-
+        private void getUserHomeAddress() {   }// code for the new Form Window
 
 
 
