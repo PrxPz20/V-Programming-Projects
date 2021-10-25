@@ -21,6 +21,7 @@ namespace week3_v2
         private int freeIngredients = 0;    // this variable, will get it value down at the < sizeRadioButton_CheckedChanged > fuction
         private double totalPizzaPrice = 0;
         private string saveUsersIngredients = null;
+        private DateTime UserDeliveryTime;
 
         private void smallRadioButton_MouseHover(object sender, EventArgs e) {toolTip1.Show("up to 2 ingredients for free",smallRadioButton); }
         private void mediumRadioButton_MouseHover(object sender, EventArgs e) {toolTip1.Show("up to 3 ingredients for free", mediumRadioButton); }
@@ -31,10 +32,16 @@ namespace week3_v2
             Form2 f2 = new Form2();
             f2.ShowDialog();
 
-            DialogResult dialogResult = MessageBox.Show($"Pizza Size: {smallPizzaPrice}\n\nIngredients: {saveUsersIngredients}\n\nLocation Address: {f2.userLocationAddress}\n\nTotal Amount: {totalPizzaPrice} ", "Order Summary", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show($"Pizza Size: {smallPizzaPrice}" +
+                Environment.NewLine + Environment.NewLine + $"Ingredients: {saveUsersIngredients}" +
+                Environment.NewLine + Environment.NewLine + $"Location Address: {f2.userLocationAddress}" +
+                Environment.NewLine + Environment.NewLine + $"Delivery Time:  {UserDeliveryTime.ToShortTimeString() }" + 
+                Environment.NewLine + Environment.NewLine + $"Total Amount: {totalPizzaPrice} ", 
+                "Order Summary", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             
             if (dialogResult == DialogResult.Yes)
                 this.Close();
+
 
             // Display a messange about the dalivery time
             
@@ -119,7 +126,7 @@ namespace week3_v2
 
             var tempUserDeliveryTime = (sender as MaskedTextBox);
             DateTime timeNow = DateTime.Now;    // Get the Exact time when the user enters the delivery time
-            DateTime UserDeliveryTime = DateTime.Parse(tempUserDeliveryTime.Text);  // convert time users time to DateTime
+            UserDeliveryTime = DateTime.Parse(tempUserDeliveryTime.Text);  // convert time users time to DateTime
 
             if (UserDeliveryTime <= timeNow) {
                 MessageBox.Show($"Time is not valid, it maybe in the past or not real time {UserDeliveryTime.ToShortTimeString()}","Time Error", MessageBoxButtons.OK ,MessageBoxIcon.Error);
