@@ -63,9 +63,29 @@ namespace week3_v2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Delivery_icon {
+            get {
+                object obj = ResourceManager.GetObject("Delivery icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pizza_Image_logo {
             get {
                 object obj = ResourceManager.GetObject("Pizza Image logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Total_price_icon_euro {
+            get {
+                object obj = ResourceManager.GetObject("Total price icon euro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

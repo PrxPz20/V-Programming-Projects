@@ -58,17 +58,21 @@ namespace week3_v2
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.sizeGroupBox.SuspendLayout();
             this.ingredientGroupBox.SuspendLayout();
             this.ingredientsFlowLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // orderButton
             // 
             this.orderButton.Enabled = false;
             this.orderButton.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.orderButton.Location = new System.Drawing.Point(111, 566);
+            this.orderButton.Location = new System.Drawing.Point(111, 579);
             this.orderButton.Name = "orderButton";
             this.orderButton.Size = new System.Drawing.Size(167, 47);
             this.orderButton.TabIndex = 0;
@@ -313,7 +317,7 @@ namespace week3_v2
             // 
             this.priceLabel.AutoSize = true;
             this.priceLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.priceLabel.Location = new System.Drawing.Point(78, 488);
+            this.priceLabel.Location = new System.Drawing.Point(121, 492);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.Size = new System.Drawing.Size(66, 32);
             this.priceLabel.TabIndex = 5;
@@ -324,7 +328,7 @@ namespace week3_v2
             // 
             this.deliveryMaskedTextBox.Enabled = false;
             this.deliveryMaskedTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.deliveryMaskedTextBox.Location = new System.Drawing.Point(179, 532);
+            this.deliveryMaskedTextBox.Location = new System.Drawing.Point(222, 535);
             this.deliveryMaskedTextBox.Mask = "00:00";
             this.deliveryMaskedTextBox.Name = "deliveryMaskedTextBox";
             this.deliveryMaskedTextBox.Size = new System.Drawing.Size(65, 29);
@@ -345,7 +349,7 @@ namespace week3_v2
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(12, 488);
+            this.label5.Location = new System.Drawing.Point(55, 492);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 32);
             this.label5.TabIndex = 9;
@@ -365,18 +369,40 @@ namespace week3_v2
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(12, 529);
+            this.label6.Location = new System.Drawing.Point(55, 532);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(166, 32);
             this.label6.TabIndex = 11;
             this.label6.Text = "Delivery Time:";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::week3_v2.Properties.Resources.Delivery_icon;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 532);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(37, 34);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::week3_v2.Properties.Resources.Total_price_icon_euro;
+            this.pictureBox3.Location = new System.Drawing.Point(12, 492);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(37, 34);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(559, 613);
+            this.ClientSize = new System.Drawing.Size(473, 628);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.free_top_upLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label6);
@@ -397,6 +423,8 @@ namespace week3_v2
             this.ingredientsFlowLayoutPanel.ResumeLayout(false);
             this.ingredientsFlowLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -432,6 +460,8 @@ namespace week3_v2
         private System.Windows.Forms.CheckBox sausageCheckBox;
         private System.Windows.Forms.CheckBox fetaCheckBox;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 
