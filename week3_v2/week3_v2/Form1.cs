@@ -21,7 +21,10 @@ namespace week3_v2
         private int freeIngredients = 0;    // this variable, will get it value down at the < sizeRadioButton_CheckedChanged > fuction
         private double totalPizzaPrice = 0;
         private string saveUsersIngredients = null;
+
         private DateTime UserDeliveryTime;
+        private Settings settings = new Settings();
+        private About about = new About();
 
         private void smallRadioButton_MouseHover(object sender, EventArgs e) {toolTip1.Show("up to 2 ingredients for free",smallRadioButton); }
         private void mediumRadioButton_MouseHover(object sender, EventArgs e) {toolTip1.Show("up to 3 ingredients for free", mediumRadioButton); }
@@ -29,7 +32,7 @@ namespace week3_v2
 
         private void orderButton_Click(object sender, EventArgs e) {
 
-            Form2 f2 = new Form2();
+            AddressForm f2 = new AddressForm();
             f2.ShowDialog();
 
             DialogResult dialogResult = MessageBox.Show($"Pizza Size: {smallPizzaPrice}" +
@@ -136,6 +139,26 @@ namespace week3_v2
                 testLabel.Text = "The Time is valid" + UserDeliveryTime + "\n" + timeNow;
 
         }
+
+        private void settingsStripMenuItem_Click(object sender, EventArgs e) {
+            settings.Show();
+
+            RadioButton newSize = new RadioButton();
+            this.Controls.Add(newSize);
+
+            newSize.Top = 20;
+            newSize.Left = 67;
+
+            newSize.ForeColor = Color.White;
+            newSize.BackColor = Color.Gray;
+            newSize.Font = new Font("Arial", 20.25F, FontStyle.Bold);
+            newSize.Text = "HEEEEEEEEEEEEEEEEEEEEEEELLLLLLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOO2123";
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e) { about.Show(); }
+
+
+
 
 
     } // 

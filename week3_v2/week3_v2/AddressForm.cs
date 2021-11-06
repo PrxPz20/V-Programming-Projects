@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace week3_v2
 {
-    public partial class Form2 : Form
+    public partial class AddressForm : Form
     {
-        public Form2() { InitializeComponent(); }
+        public AddressForm() { InitializeComponent(); }
 
         public string userLocationAddress = null;
 

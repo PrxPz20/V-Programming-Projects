@@ -1,7 +1,7 @@
 ﻿
 namespace week3_v2
 {
-    partial class Form2
+    partial class AddressForm
     {
         /// <summary>
         /// Required designer variable.

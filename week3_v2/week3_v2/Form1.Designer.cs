@@ -60,19 +60,25 @@ namespace week3_v2
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.settingsStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pizzaSizeFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.sizeGroupBox.SuspendLayout();
             this.ingredientGroupBox.SuspendLayout();
             this.ingredientsFlowLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.mainMenuStrip.SuspendLayout();
+            this.pizzaSizeFlowLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // orderButton
             // 
             this.orderButton.Enabled = false;
             this.orderButton.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.orderButton.Location = new System.Drawing.Point(111, 579);
+            this.orderButton.Location = new System.Drawing.Point(111, 603);
             this.orderButton.Name = "orderButton";
             this.orderButton.Size = new System.Drawing.Size(167, 47);
             this.orderButton.TabIndex = 0;
@@ -84,7 +90,7 @@ namespace week3_v2
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(12, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(303, 40);
             this.label1.TabIndex = 1;
@@ -92,14 +98,12 @@ namespace week3_v2
             // 
             // sizeGroupBox
             // 
+            this.sizeGroupBox.Controls.Add(this.pizzaSizeFlowLayoutPanel);
             this.sizeGroupBox.Controls.Add(this.label2);
-            this.sizeGroupBox.Controls.Add(this.LargeRadioButton);
-            this.sizeGroupBox.Controls.Add(this.smallRadioButton);
-            this.sizeGroupBox.Controls.Add(this.mediumRadioButton);
             this.sizeGroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.sizeGroupBox.Location = new System.Drawing.Point(12, 61);
+            this.sizeGroupBox.Location = new System.Drawing.Point(12, 85);
             this.sizeGroupBox.Name = "sizeGroupBox";
-            this.sizeGroupBox.Size = new System.Drawing.Size(266, 159);
+            this.sizeGroupBox.Size = new System.Drawing.Size(266, 203);
             this.sizeGroupBox.TabIndex = 2;
             this.sizeGroupBox.TabStop = false;
             this.sizeGroupBox.Text = "Size";
@@ -115,8 +119,9 @@ namespace week3_v2
             // 
             // LargeRadioButton
             // 
+            this.LargeRadioButton.AutoCheck = false;
             this.LargeRadioButton.AutoSize = true;
-            this.LargeRadioButton.Location = new System.Drawing.Point(6, 120);
+            this.LargeRadioButton.Location = new System.Drawing.Point(3, 65);
             this.LargeRadioButton.Name = "LargeRadioButton";
             this.LargeRadioButton.Size = new System.Drawing.Size(147, 25);
             this.LargeRadioButton.TabIndex = 7;
@@ -128,8 +133,9 @@ namespace week3_v2
             // 
             // smallRadioButton
             // 
+            this.smallRadioButton.AutoCheck = false;
             this.smallRadioButton.AutoSize = true;
-            this.smallRadioButton.Location = new System.Drawing.Point(6, 58);
+            this.smallRadioButton.Location = new System.Drawing.Point(3, 3);
             this.smallRadioButton.Name = "smallRadioButton";
             this.smallRadioButton.Size = new System.Drawing.Size(138, 25);
             this.smallRadioButton.TabIndex = 5;
@@ -141,8 +147,9 @@ namespace week3_v2
             // 
             // mediumRadioButton
             // 
+            this.mediumRadioButton.AutoCheck = false;
             this.mediumRadioButton.AutoSize = true;
-            this.mediumRadioButton.Location = new System.Drawing.Point(6, 89);
+            this.mediumRadioButton.Location = new System.Drawing.Point(3, 34);
             this.mediumRadioButton.Name = "mediumRadioButton";
             this.mediumRadioButton.Size = new System.Drawing.Size(146, 25);
             this.mediumRadioButton.TabIndex = 6;
@@ -157,7 +164,7 @@ namespace week3_v2
             this.ingredientGroupBox.Controls.Add(this.ingredientsFlowLayoutPanel);
             this.ingredientGroupBox.Enabled = false;
             this.ingredientGroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ingredientGroupBox.Location = new System.Drawing.Point(12, 259);
+            this.ingredientGroupBox.Location = new System.Drawing.Point(12, 283);
             this.ingredientGroupBox.Name = "ingredientGroupBox";
             this.ingredientGroupBox.Size = new System.Drawing.Size(266, 226);
             this.ingredientGroupBox.TabIndex = 3;
@@ -297,7 +304,7 @@ namespace week3_v2
             // 
             this.free_top_upLabel.AutoSize = true;
             this.free_top_upLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.free_top_upLabel.Location = new System.Drawing.Point(111, 239);
+            this.free_top_upLabel.Location = new System.Drawing.Point(111, 263);
             this.free_top_upLabel.Name = "free_top_upLabel";
             this.free_top_upLabel.Size = new System.Drawing.Size(157, 25);
             this.free_top_upLabel.TabIndex = 4;
@@ -307,7 +314,7 @@ namespace week3_v2
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(295, 293);
+            this.label3.Location = new System.Drawing.Point(295, 317);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(155, 30);
             this.label3.TabIndex = 4;
@@ -317,7 +324,7 @@ namespace week3_v2
             // 
             this.priceLabel.AutoSize = true;
             this.priceLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.priceLabel.Location = new System.Drawing.Point(121, 492);
+            this.priceLabel.Location = new System.Drawing.Point(121, 516);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.Size = new System.Drawing.Size(66, 32);
             this.priceLabel.TabIndex = 5;
@@ -328,7 +335,7 @@ namespace week3_v2
             // 
             this.deliveryMaskedTextBox.Enabled = false;
             this.deliveryMaskedTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.deliveryMaskedTextBox.Location = new System.Drawing.Point(222, 535);
+            this.deliveryMaskedTextBox.Location = new System.Drawing.Point(222, 559);
             this.deliveryMaskedTextBox.Mask = "00:00";
             this.deliveryMaskedTextBox.Name = "deliveryMaskedTextBox";
             this.deliveryMaskedTextBox.Size = new System.Drawing.Size(65, 29);
@@ -339,7 +346,7 @@ namespace week3_v2
             // testLabel
             // 
             this.testLabel.AutoSize = true;
-            this.testLabel.Location = new System.Drawing.Point(316, 226);
+            this.testLabel.Location = new System.Drawing.Point(316, 250);
             this.testLabel.Name = "testLabel";
             this.testLabel.Size = new System.Drawing.Size(26, 15);
             this.testLabel.TabIndex = 8;
@@ -349,7 +356,7 @@ namespace week3_v2
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(55, 492);
+            this.label5.Location = new System.Drawing.Point(55, 516);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 32);
             this.label5.TabIndex = 9;
@@ -358,7 +365,7 @@ namespace week3_v2
             // pictureBox1
             // 
             this.pictureBox1.Image = global::week3_v2.Properties.Resources.Pizza_Image_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(316, -8);
+            this.pictureBox1.Location = new System.Drawing.Point(316, 16);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(74, 79);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -369,7 +376,7 @@ namespace week3_v2
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(55, 532);
+            this.label6.Location = new System.Drawing.Point(55, 556);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(166, 32);
             this.label6.TabIndex = 11;
@@ -378,7 +385,7 @@ namespace week3_v2
             // pictureBox2
             // 
             this.pictureBox2.Image = global::week3_v2.Properties.Resources.Delivery_icon;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 532);
+            this.pictureBox2.Location = new System.Drawing.Point(15, 556);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(37, 34);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -388,19 +395,56 @@ namespace week3_v2
             // pictureBox3
             // 
             this.pictureBox3.Image = global::week3_v2.Properties.Resources.Total_price_icon_euro;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 492);
+            this.pictureBox3.Location = new System.Drawing.Point(15, 516);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(37, 34);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 13;
             this.pictureBox3.TabStop = false;
             // 
+            // mainMenuStrip
+            // 
+            this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.mainMenuStrip.Name = "mainMenuStrip";
+            this.mainMenuStrip.Size = new System.Drawing.Size(813, 24);
+            this.mainMenuStrip.TabIndex = 15;
+            this.mainMenuStrip.Text = "menuStrip1";
+            // 
+            // settingsStripMenuItem
+            // 
+            this.settingsStripMenuItem.Name = "settingsStripMenuItem";
+            this.settingsStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsStripMenuItem.Text = "Settings";
+            this.settingsStripMenuItem.Click += new System.EventHandler(this.settingsStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // pizzaSizeFlowLayoutPanel
+            // 
+            this.pizzaSizeFlowLayoutPanel.Controls.Add(this.smallRadioButton);
+            this.pizzaSizeFlowLayoutPanel.Controls.Add(this.mediumRadioButton);
+            this.pizzaSizeFlowLayoutPanel.Controls.Add(this.LargeRadioButton);
+            this.pizzaSizeFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.pizzaSizeFlowLayoutPanel.Location = new System.Drawing.Point(9, 49);
+            this.pizzaSizeFlowLayoutPanel.Name = "pizzaSizeFlowLayoutPanel";
+            this.pizzaSizeFlowLayoutPanel.Size = new System.Drawing.Size(247, 131);
+            this.pizzaSizeFlowLayoutPanel.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(473, 628);
+            this.ClientSize = new System.Drawing.Size(813, 663);
+            this.Controls.Add(this.mainMenuStrip);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.free_top_upLabel);
@@ -416,7 +460,7 @@ namespace week3_v2
             this.Controls.Add(this.label1);
             this.Controls.Add(this.orderButton);
             this.Name = "Form1";
-            this.Text = "Pizza App";
+            this.Text = "PizzaApp";
             this.sizeGroupBox.ResumeLayout(false);
             this.sizeGroupBox.PerformLayout();
             this.ingredientGroupBox.ResumeLayout(false);
@@ -425,6 +469,10 @@ namespace week3_v2
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.mainMenuStrip.ResumeLayout(false);
+            this.mainMenuStrip.PerformLayout();
+            this.pizzaSizeFlowLayoutPanel.ResumeLayout(false);
+            this.pizzaSizeFlowLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -462,6 +510,10 @@ namespace week3_v2
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.MenuStrip mainMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem settingsStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.FlowLayoutPanel pizzaSizeFlowLayoutPanel;
     }
 }
 
