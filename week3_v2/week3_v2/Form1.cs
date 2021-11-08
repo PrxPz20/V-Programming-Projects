@@ -11,8 +11,12 @@ using System.Windows.Forms;
 namespace week3_v2
 {
     public partial class Form1 : Form {
-        public Form1() { InitializeComponent(); }
+        public Form1() { InitializeComponent();
 
+            
+
+
+        }
 
         private const double smallPizzaPrice = 5.50;
         private const double mediumPizzaPrice = 11.75;
@@ -26,30 +30,23 @@ namespace week3_v2
         private Settings settings = new Settings();
         private About about = new About();
 
-        private void smallRadioButton_MouseHover(object sender, EventArgs e) {toolTip1.Show("up to 2 ingredients for free",smallRadioButton); }
-        private void mediumRadioButton_MouseHover(object sender, EventArgs e) {toolTip1.Show("up to 3 ingredients for free", mediumRadioButton); }
-        private void LargeRadioButton_MouseHover(object sender, EventArgs e) { toolTip1.Show("up to 4 ingredients for free", smallRadioButton); }
 
         private void orderButton_Click(object sender, EventArgs e) {
 
-            AddressForm f2 = new AddressForm();
-            f2.ShowDialog();
+            AddressForm addressForm = new AddressForm();
+            addressForm.ShowDialog();
 
             DialogResult dialogResult = MessageBox.Show($"Pizza Size: {smallPizzaPrice}" +
                 Environment.NewLine + Environment.NewLine + $"Ingredients: {saveUsersIngredients}" +
-                Environment.NewLine + Environment.NewLine + $"Location Address: {f2.userLocationAddress}" +
+                Environment.NewLine + Environment.NewLine + $"Location Address: {addressForm.userLocationAddress}" +
                 Environment.NewLine + Environment.NewLine + $"Delivery Time:  {UserDeliveryTime.ToShortTimeString() }" + 
                 Environment.NewLine + Environment.NewLine + $"Total Amount: {totalPizzaPrice} ", 
                 "Order Summary", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             
             if (dialogResult == DialogResult.Yes)
                 this.Close();
-
-
-            // Display a messange about the dalivery time
             
         }
-
 
         // This Fuction prints the total pizza price
         private void updatePizzaPrice() { priceLabel.Text = $"€ {totalPizzaPrice}"; }
@@ -122,7 +119,7 @@ namespace week3_v2
                 free_top_upLabel.Text = "Free Ingredients: 0"; // if the free_top_upLabel under 0 like -1, it will prevent it by showing 0.
 
             updatePizzaPrice();
-            testLabel.Text = "U: " + checkbox.Text;
+
         }
 
         private void deliveryMaskedTextBox_TypeValidationCompleted(object sender, TypeValidationEventArgs e) {
@@ -141,23 +138,25 @@ namespace week3_v2
         }
 
         private void settingsStripMenuItem_Click(object sender, EventArgs e) {
-            settings.Show();
-
-            RadioButton newSize = new RadioButton();
-            this.Controls.Add(newSize);
-
-            newSize.Top = 20;
-            newSize.Left = 67;
-
-            newSize.ForeColor = Color.White;
-            newSize.BackColor = Color.Gray;
-            newSize.Font = new Font("Arial", 20.25F, FontStyle.Bold);
-            newSize.Text = "HEEEEEEEEEEEEEEEEEEEEEEELLLLLLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOO2123";
+            settings.ShowDialog();
+        }
+                                                                                
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e) { about.ShowDialog();
+            createPizzaSizeRadioButton("smallRadioButton", "Small       € 5.50");
+            createPizzaSizeRadioButton("LargeRadio","Large 555");
         }
 
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e) { about.Show(); }
+        private void createPizzaSizeRadioButton(string name, string text) {
 
+            //pizzaSizeFlowLayoutPanel.Controls.Clear();
+            RadioButton radioButton = new RadioButton();
+            radioButton.Text = text;
+            radioButton.Name = name;
+            radioButton.CheckedChanged += sizeRadioButton_CheckedChanged;
+            radioButton.AutoSize = true;
 
+            pizzaSizeFlowLayoutPanel.Controls.Add(radioButton);
+        }
 
 
 

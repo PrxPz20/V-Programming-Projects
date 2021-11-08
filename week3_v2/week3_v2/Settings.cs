@@ -37,7 +37,7 @@ namespace week3_v2
 
         private void saveSizeBuitton_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
+            
             string pizzaSizesString = JsonConvert.SerializeObject(pizzaSizes);
 
             File.WriteAllText("PizzaSize.json", pizzaSizesString);
