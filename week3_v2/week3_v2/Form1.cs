@@ -11,32 +11,33 @@ using System.Windows.Forms;
 namespace week3_v2
 {
     public partial class Form1 : Form {
-        public Form1() { InitializeComponent();
 
-            
-
-
-        }
-
-        private const double smallPizzaPrice = 5.50;
-        private const double mediumPizzaPrice = 11.75;
-        private const double largePizzaPrice = 15.00;
-        private const double extraIngredient = 0.75;
         private int freeIngredients = 0;    // this variable, will get it value down at the < sizeRadioButton_CheckedChanged > fuction
         private double totalPizzaPrice = 0;
-        private string saveUsersIngredients = null;
-
+        private string saveUsersIngredients = null; // This variable will save and display all the ingredients that the user selected
         private DateTime UserDeliveryTime;
+
         private Settings settings = new Settings();
         private About about = new About();
+        private PizzaSize PizzaSize = new PizzaSize();
 
 
+        public Form1() { InitializeComponent();
+
+            //createPizzaSizeRadioButton("smallRadioButton", "Small       € 5.50");
+            //createPizzaSizeRadioButton("mediumRadioButton", "Medium     €11.75");
+            //createPizzaSizeRadioButton("largeRadioButton", "Large       € 15.00");
+
+            
+        }
+
+        
         private void orderButton_Click(object sender, EventArgs e) {
 
             AddressForm addressForm = new AddressForm();
             addressForm.ShowDialog();
 
-            DialogResult dialogResult = MessageBox.Show($"Pizza Size: {smallPizzaPrice}" +
+            DialogResult dialogResult = MessageBox.Show($"Pizza Size: {PizzaSize.smallPizzaPrice}" +
                 Environment.NewLine + Environment.NewLine + $"Ingredients: {saveUsersIngredients}" +
                 Environment.NewLine + Environment.NewLine + $"Location Address: {addressForm.userLocationAddress}" +
                 Environment.NewLine + Environment.NewLine + $"Delivery Time:  {UserDeliveryTime.ToShortTimeString() }" + 
@@ -54,22 +55,23 @@ namespace week3_v2
         private void sizeRadioButton_CheckedChanged(object sender, EventArgs e) {
 
             priceLabel.Visible = true;
-            var size = (sender as RadioButton);
-            
+            var sizeSelected = (sender as RadioButton).Name;
+            testLabel.Text = sizeSelected;
+
             // Small: up to 2 ingredients for free
-            if (smallRadioButton.Checked) {
+            if (sizeSelected ==  "smallRadioButton") { 
                 freeIngredients = 2;
-                totalPizzaPrice = smallPizzaPrice;
+                totalPizzaPrice = PizzaSize.smallPizzaPrice;
             }
             // Medium: up to 3 ingredients for free
-            else if (mediumRadioButton.Checked == true) {
+            else if (sizeSelected == "mediumRadioButton") { 
                 freeIngredients = 3;
-                totalPizzaPrice = mediumPizzaPrice;
+                totalPizzaPrice = PizzaSize.mediumPizzaPrice;
             }
             // Large: up to 4 ingredients for free
             else {
                 freeIngredients = 4;
-                totalPizzaPrice = largePizzaPrice;
+                totalPizzaPrice = PizzaSize.largePizzaPrice;
             }
 
             updatePizzaPrice();
@@ -99,7 +101,7 @@ namespace week3_v2
                 if (freeIngredients > 0)
                     totalPizzaPrice -= 0;
                 else 
-                    totalPizzaPrice -= extraIngredient; 
+                    totalPizzaPrice -= PizzaSize.extraIngredient; 
             }
             // If user checked a Box
             else {
@@ -109,7 +111,7 @@ namespace week3_v2
 
                 // if the user uses all freeIngredients, 0,75 cent will be added to the price
                 if (freeIngredients < 0)
-                    totalPizzaPrice += extraIngredient;
+                    totalPizzaPrice += PizzaSize.extraIngredient;
             }
 
             // if the freeIngredients is not under 0 it will show 0, otherwise it will display normally
@@ -141,25 +143,29 @@ namespace week3_v2
             settings.ShowDialog();
         }
                                                                                 
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e) { about.ShowDialog();
-            createPizzaSizeRadioButton("smallRadioButton", "Small       € 5.50");
-            createPizzaSizeRadioButton("LargeRadio","Large 555");
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e) { 
+            
+            about.ShowDialog();
         }
 
-        private void createPizzaSizeRadioButton(string name, string text) {
+        public void createPizzaSizeRadioButton(string name, string text)
+        {
 
             //pizzaSizeFlowLayoutPanel.Controls.Clear();
             RadioButton radioButton = new RadioButton();
             radioButton.Text = text;
             radioButton.Name = name;
             radioButton.CheckedChanged += sizeRadioButton_CheckedChanged;
+            radioButton.Click += sizeClicked;
             radioButton.AutoSize = true;
 
             pizzaSizeFlowLayoutPanel.Controls.Add(radioButton);
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
-
+        }
     } // 
 } // END of  week3_v2
 

@@ -35,9 +35,9 @@ namespace week3_v2
             this.sizeGroupBox = new System.Windows.Forms.GroupBox();
             this.pizzaSizeFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.smallRadioButton = new System.Windows.Forms.RadioButton();
-            this.LargeRadioButton = new System.Windows.Forms.RadioButton();
-            this.mediumRadioButton = new System.Windows.Forms.RadioButton();
+            this._smallRadioButton = new System.Windows.Forms.RadioButton();
+            this._LargeRadioButton = new System.Windows.Forms.RadioButton();
+            this._mediumRadioButton = new System.Windows.Forms.RadioButton();
             this.ingredientGroupBox = new System.Windows.Forms.GroupBox();
             this.ingredientsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.PepperoniCheckBox = new System.Windows.Forms.CheckBox();
@@ -57,7 +57,6 @@ namespace week3_v2
             this.deliveryMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.testLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -69,7 +68,6 @@ namespace week3_v2
             this.pizzaSizeFlowLayoutPanel.SuspendLayout();
             this.ingredientGroupBox.SuspendLayout();
             this.ingredientsFlowLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.mainMenuStrip.SuspendLayout();
@@ -126,41 +124,41 @@ namespace week3_v2
             this.label2.TabIndex = 8;
             this.label2.Text = "Please select pizza size";
             // 
-            // smallRadioButton
+            // _smallRadioButton
             // 
-            this.smallRadioButton.AutoSize = true;
-            this.smallRadioButton.Location = new System.Drawing.Point(250, 282);
-            this.smallRadioButton.Name = "smallRadioButton";
-            this.smallRadioButton.Size = new System.Drawing.Size(105, 19);
-            this.smallRadioButton.TabIndex = 5;
-            this.smallRadioButton.Text = "Small       € 5.50";
-            this.smallRadioButton.UseVisualStyleBackColor = true;
-            this.smallRadioButton.CheckedChanged += new System.EventHandler(this.sizeRadioButton_CheckedChanged);
-            this.smallRadioButton.Click += new System.EventHandler(this.sizeClicked);
+            this._smallRadioButton.AutoSize = true;
+            this._smallRadioButton.Location = new System.Drawing.Point(250, 282);
+            this._smallRadioButton.Name = "_smallRadioButton";
+            this._smallRadioButton.Size = new System.Drawing.Size(105, 19);
+            this._smallRadioButton.TabIndex = 5;
+            this._smallRadioButton.Text = "Small       € 5.50";
+            this._smallRadioButton.UseVisualStyleBackColor = true;
+            this._smallRadioButton.CheckedChanged += new System.EventHandler(this.sizeRadioButton_CheckedChanged);
+            this._smallRadioButton.Click += new System.EventHandler(this.sizeClicked);
             // 
-            // LargeRadioButton
+            // _LargeRadioButton
             // 
-            this.LargeRadioButton.AutoSize = true;
-            this.LargeRadioButton.Location = new System.Drawing.Point(250, 313);
-            this.LargeRadioButton.Name = "LargeRadioButton";
-            this.LargeRadioButton.Size = new System.Drawing.Size(111, 19);
-            this.LargeRadioButton.TabIndex = 7;
-            this.LargeRadioButton.Text = "Large       € 15.00";
-            this.LargeRadioButton.UseVisualStyleBackColor = true;
-            this.LargeRadioButton.CheckedChanged += new System.EventHandler(this.sizeRadioButton_CheckedChanged);
-            this.LargeRadioButton.Click += new System.EventHandler(this.sizeClicked);
+            this._LargeRadioButton.AutoSize = true;
+            this._LargeRadioButton.Location = new System.Drawing.Point(250, 313);
+            this._LargeRadioButton.Name = "_LargeRadioButton";
+            this._LargeRadioButton.Size = new System.Drawing.Size(111, 19);
+            this._LargeRadioButton.TabIndex = 7;
+            this._LargeRadioButton.Text = "Large       € 15.00";
+            this._LargeRadioButton.UseVisualStyleBackColor = true;
+            this._LargeRadioButton.CheckedChanged += new System.EventHandler(this.sizeRadioButton_CheckedChanged);
+            this._LargeRadioButton.Click += new System.EventHandler(this.sizeClicked);
             // 
-            // mediumRadioButton
+            // _mediumRadioButton
             // 
-            this.mediumRadioButton.AutoSize = true;
-            this.mediumRadioButton.Location = new System.Drawing.Point(250, 344);
-            this.mediumRadioButton.Name = "mediumRadioButton";
-            this.mediumRadioButton.Size = new System.Drawing.Size(112, 19);
-            this.mediumRadioButton.TabIndex = 6;
-            this.mediumRadioButton.Text = "Medium  € 11.75";
-            this.mediumRadioButton.UseVisualStyleBackColor = true;
-            this.mediumRadioButton.CheckedChanged += new System.EventHandler(this.sizeRadioButton_CheckedChanged);
-            this.mediumRadioButton.Click += new System.EventHandler(this.sizeClicked);
+            this._mediumRadioButton.AutoSize = true;
+            this._mediumRadioButton.Location = new System.Drawing.Point(250, 344);
+            this._mediumRadioButton.Name = "_mediumRadioButton";
+            this._mediumRadioButton.Size = new System.Drawing.Size(112, 19);
+            this._mediumRadioButton.TabIndex = 6;
+            this._mediumRadioButton.Text = "Medium  € 11.75";
+            this._mediumRadioButton.UseVisualStyleBackColor = true;
+            this._mediumRadioButton.CheckedChanged += new System.EventHandler(this.sizeRadioButton_CheckedChanged);
+            this._mediumRadioButton.Click += new System.EventHandler(this.sizeClicked);
             // 
             // ingredientGroupBox
             // 
@@ -349,7 +347,7 @@ namespace week3_v2
             // testLabel
             // 
             this.testLabel.AutoSize = true;
-            this.testLabel.Location = new System.Drawing.Point(566, 334);
+            this.testLabel.Location = new System.Drawing.Point(456, 317);
             this.testLabel.Name = "testLabel";
             this.testLabel.Size = new System.Drawing.Size(26, 15);
             this.testLabel.TabIndex = 8;
@@ -364,16 +362,6 @@ namespace week3_v2
             this.label5.Size = new System.Drawing.Size(70, 32);
             this.label5.TabIndex = 9;
             this.label5.Text = "Total:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::week3_v2.Properties.Resources.Pizza_Image_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(316, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(74, 79);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
             // 
             // label6
             // 
@@ -441,15 +429,14 @@ namespace week3_v2
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(875, 497);
             this.Controls.Add(this.mainMenuStrip);
-            this.Controls.Add(this.smallRadioButton);
-            this.Controls.Add(this.LargeRadioButton);
+            this.Controls.Add(this._smallRadioButton);
+            this.Controls.Add(this._LargeRadioButton);
             this.Controls.Add(this.free_top_upLabel);
-            this.Controls.Add(this.mediumRadioButton);
+            this.Controls.Add(this._mediumRadioButton);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.testLabel);
             this.Controls.Add(this.deliveryMaskedTextBox);
@@ -460,13 +447,13 @@ namespace week3_v2
             this.Controls.Add(this.orderButton);
             this.Name = "Form1";
             this.Text = "PizzaApp";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.sizeGroupBox.ResumeLayout(false);
             this.pizzaSizeFlowLayoutPanel.ResumeLayout(false);
             this.pizzaSizeFlowLayoutPanel.PerformLayout();
             this.ingredientGroupBox.ResumeLayout(false);
             this.ingredientsFlowLayoutPanel.ResumeLayout(false);
             this.ingredientsFlowLayoutPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.mainMenuStrip.ResumeLayout(false);
@@ -495,7 +482,6 @@ namespace week3_v2
         private System.Windows.Forms.MaskedTextBox deliveryMaskedTextBox;
         private System.Windows.Forms.Label testLabel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.FlowLayoutPanel ingredientsFlowLayoutPanel;
         private System.Windows.Forms.CheckBox tomatoCheckBox;
@@ -507,9 +493,9 @@ namespace week3_v2
         private System.Windows.Forms.MenuStrip mainMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem settingsStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.RadioButton smallRadioButton;
-        private System.Windows.Forms.RadioButton mediumRadioButton;
-        private System.Windows.Forms.RadioButton LargeRadioButton;
+        private System.Windows.Forms.RadioButton _smallRadioButton;
+        private System.Windows.Forms.RadioButton _mediumRadioButton;
+        private System.Windows.Forms.RadioButton _LargeRadioButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel pizzaSizeFlowLayoutPanel;
         private System.Windows.Forms.Timer timer1;
