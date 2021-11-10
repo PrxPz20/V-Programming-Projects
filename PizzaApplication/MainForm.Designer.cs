@@ -1,7 +1,7 @@
 ﻿
 namespace PizzaApplication
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -37,8 +37,10 @@ namespace PizzaApplication
             this.freeIngredientsLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.deliveryTimeMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.testLabel = new System.Windows.Forms.Label();
+            this.pizzaSizeFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.pizzaSizeGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // orderButton
@@ -75,10 +77,11 @@ namespace PizzaApplication
             // 
             // pizzaSizeGroupBox
             // 
+            this.pizzaSizeGroupBox.Controls.Add(this.pizzaSizeFlowLayoutPanel);
             this.pizzaSizeGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pizzaSizeGroupBox.Location = new System.Drawing.Point(18, 73);
             this.pizzaSizeGroupBox.Name = "pizzaSizeGroupBox";
-            this.pizzaSizeGroupBox.Size = new System.Drawing.Size(224, 185);
+            this.pizzaSizeGroupBox.Size = new System.Drawing.Size(259, 185);
             this.pizzaSizeGroupBox.TabIndex = 3;
             this.pizzaSizeGroupBox.TabStop = false;
             this.pizzaSizeGroupBox.Text = "Size";
@@ -125,15 +128,16 @@ namespace PizzaApplication
             this.label3.TabIndex = 7;
             this.label3.Text = "Delivery Time:";
             // 
-            // maskedTextBox1
+            // deliveryTimeMaskedTextBox
             // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(375, 375);
-            this.maskedTextBox1.Mask = "00:00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(86, 31);
-            this.maskedTextBox1.TabIndex = 8;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.deliveryTimeMaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deliveryTimeMaskedTextBox.Location = new System.Drawing.Point(375, 375);
+            this.deliveryTimeMaskedTextBox.Mask = "00:00";
+            this.deliveryTimeMaskedTextBox.Name = "deliveryTimeMaskedTextBox";
+            this.deliveryTimeMaskedTextBox.Size = new System.Drawing.Size(86, 31);
+            this.deliveryTimeMaskedTextBox.TabIndex = 8;
+            this.deliveryTimeMaskedTextBox.ValidatingType = typeof(System.DateTime);
+            this.deliveryTimeMaskedTextBox.TypeValidationCompleted += new System.Windows.Forms.TypeValidationEventHandler(this.deliveryTimeMaskedTextBox_TypeValidationCompleted);
             // 
             // testLabel
             // 
@@ -145,14 +149,22 @@ namespace PizzaApplication
             this.testLabel.TabIndex = 9;
             this.testLabel.Text = "TEST";
             // 
-            // Form1
+            // pizzaSizeFlowLayoutPanel
+            // 
+            this.pizzaSizeFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pizzaSizeFlowLayoutPanel.Location = new System.Drawing.Point(3, 22);
+            this.pizzaSizeFlowLayoutPanel.Name = "pizzaSizeFlowLayoutPanel";
+            this.pizzaSizeFlowLayoutPanel.Size = new System.Drawing.Size(253, 160);
+            this.pizzaSizeFlowLayoutPanel.TabIndex = 0;
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.testLabel);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.deliveryTimeMaskedTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.freeIngredientsLabel);
@@ -161,8 +173,9 @@ namespace PizzaApplication
             this.Controls.Add(this.totalPriceLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.orderButton);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "PizzaApp";
+            this.pizzaSizeGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,8 +191,9 @@ namespace PizzaApplication
         private System.Windows.Forms.Label freeIngredientsLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox deliveryTimeMaskedTextBox;
         private System.Windows.Forms.Label testLabel;
+        private System.Windows.Forms.FlowLayoutPanel pizzaSizeFlowLayoutPanel;
     }
 }
 

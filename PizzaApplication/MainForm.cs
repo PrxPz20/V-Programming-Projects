@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PizzaApplication
 {
-    public partial class Form1 : Form {
+    public partial class MainForm : Form {
 
         private int freeIngredients = 0;    // this variable, will get it value down at the < sizeRadioButton_CheckedChanged > fuction
         private double totalPizzaPrice = 0;
@@ -19,7 +19,7 @@ namespace PizzaApplication
 
         private PizzaSize PizzaSize = new PizzaSize();
 
-        public Form1()
+        public MainForm()
        {
             InitializeComponent();
         }
@@ -79,8 +79,43 @@ namespace PizzaApplication
 
             // Display how many free Ingredients the user has
             freeIngredientsLabel.Text = $"Free Ingredients: { freeIngredients}";
+
         }
 
+
+
+
+
+
+        private void deliveryTimeMaskedTextBox_TypeValidationCompleted(object sender, TypeValidationEventArgs e) {
+
+            var tempUserDeliveryTime = (sender as MaskedTextBox);
+            DateTime timeNow = DateTime.Now;    // Get the Exact time when the user enters the delivery time
+            UserDeliveryTime = DateTime.Parse(tempUserDeliveryTime.Text);  // convert time users time to DateTime
+
+            if (UserDeliveryTime <= timeNow)
+            {
+                MessageBox.Show($"Time is not valid, it maybe in the past or not real time {UserDeliveryTime.ToShortTimeString()}", "Time Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // TEST testLabel.Text = " Under the\ntime: " + UserDeliveryTime.ToShortTimeString() + "\n" + timeNow.ToShortTimeString(); 
+            }
+            else
+                testLabel.Text = "The Time is valid" + UserDeliveryTime + "\n" + timeNow;
+
+        }
+
+
+        public void createPizzaSizeRadioButton(string name, string text) {
+
+            //pizzaSizeFlowLayoutPanel.Controls.Clear();
+            RadioButton radioButton = new RadioButton();
+            radioButton.Text = text;
+            radioButton.Name = name;
+            radioButton.CheckedChanged += sizeRadioButton_CheckedChanged;
+            radioButton.Click += sizeClicked;
+            radioButton.AutoSize = true;
+
+            pizzaSizeFlowLayoutPanel.Controls.Add(radioButton);
+        }
 
 
 
