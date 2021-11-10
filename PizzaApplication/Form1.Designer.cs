@@ -33,11 +33,12 @@ namespace PizzaApplication
             this.label1 = new System.Windows.Forms.Label();
             this.totalPriceLabel = new System.Windows.Forms.Label();
             this.pizzaSizeGroupBox = new System.Windows.Forms.GroupBox();
-            this.ingredientsGroupBox2 = new System.Windows.Forms.GroupBox();
+            this.ingredientsGroupBox = new System.Windows.Forms.GroupBox();
             this.freeIngredientsLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.testLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // orderButton
@@ -49,12 +50,13 @@ namespace PizzaApplication
             this.orderButton.TabIndex = 0;
             this.orderButton.Text = "Order";
             this.orderButton.UseVisualStyleBackColor = true;
+            this.orderButton.Click += new System.EventHandler(this.orderButton_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(12, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 31);
             this.label1.TabIndex = 1;
@@ -69,36 +71,39 @@ namespace PizzaApplication
             this.totalPriceLabel.Size = new System.Drawing.Size(59, 25);
             this.totalPriceLabel.TabIndex = 2;
             this.totalPriceLabel.Text = "price";
+            this.totalPriceLabel.Visible = false;
             // 
             // pizzaSizeGroupBox
             // 
             this.pizzaSizeGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pizzaSizeGroupBox.Location = new System.Drawing.Point(18, 56);
+            this.pizzaSizeGroupBox.Location = new System.Drawing.Point(18, 73);
             this.pizzaSizeGroupBox.Name = "pizzaSizeGroupBox";
             this.pizzaSizeGroupBox.Size = new System.Drawing.Size(224, 185);
             this.pizzaSizeGroupBox.TabIndex = 3;
             this.pizzaSizeGroupBox.TabStop = false;
             this.pizzaSizeGroupBox.Text = "Size";
             // 
-            // ingredientsGroupBox2
+            // ingredientsGroupBox
             // 
-            this.ingredientsGroupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ingredientsGroupBox2.Location = new System.Drawing.Point(332, 56);
-            this.ingredientsGroupBox2.Name = "ingredientsGroupBox2";
-            this.ingredientsGroupBox2.Size = new System.Drawing.Size(419, 185);
-            this.ingredientsGroupBox2.TabIndex = 4;
-            this.ingredientsGroupBox2.TabStop = false;
-            this.ingredientsGroupBox2.Text = "Ingredients";
+            this.ingredientsGroupBox.Enabled = false;
+            this.ingredientsGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ingredientsGroupBox.Location = new System.Drawing.Point(332, 73);
+            this.ingredientsGroupBox.Name = "ingredientsGroupBox";
+            this.ingredientsGroupBox.Size = new System.Drawing.Size(419, 185);
+            this.ingredientsGroupBox.TabIndex = 4;
+            this.ingredientsGroupBox.TabStop = false;
+            this.ingredientsGroupBox.Text = "Ingredients";
             // 
             // freeIngredientsLabel
             // 
             this.freeIngredientsLabel.AutoSize = true;
             this.freeIngredientsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.freeIngredientsLabel.Location = new System.Drawing.Point(328, 244);
+            this.freeIngredientsLabel.Location = new System.Drawing.Point(328, 261);
             this.freeIngredientsLabel.Name = "freeIngredientsLabel";
             this.freeIngredientsLabel.Size = new System.Drawing.Size(153, 24);
             this.freeIngredientsLabel.TabIndex = 5;
             this.freeIngredientsLabel.Text = "Free Ingredients:";
+            this.freeIngredientsLabel.Visible = false;
             // 
             // label2
             // 
@@ -130,17 +135,28 @@ namespace PizzaApplication
             this.maskedTextBox1.TabIndex = 8;
             this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
+            // testLabel
+            // 
+            this.testLabel.AutoSize = true;
+            this.testLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.testLabel.Location = new System.Drawing.Point(570, 321);
+            this.testLabel.Name = "testLabel";
+            this.testLabel.Size = new System.Drawing.Size(49, 20);
+            this.testLabel.TabIndex = 9;
+            this.testLabel.Text = "TEST";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.testLabel);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.freeIngredientsLabel);
-            this.Controls.Add(this.ingredientsGroupBox2);
+            this.Controls.Add(this.ingredientsGroupBox);
             this.Controls.Add(this.pizzaSizeGroupBox);
             this.Controls.Add(this.totalPriceLabel);
             this.Controls.Add(this.label1);
@@ -158,11 +174,12 @@ namespace PizzaApplication
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label totalPriceLabel;
         private System.Windows.Forms.GroupBox pizzaSizeGroupBox;
-        private System.Windows.Forms.GroupBox ingredientsGroupBox2;
+        private System.Windows.Forms.GroupBox ingredientsGroupBox;
         private System.Windows.Forms.Label freeIngredientsLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label testLabel;
     }
 }
 
