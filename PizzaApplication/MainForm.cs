@@ -8,20 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PizzaApplication
-{
+namespace PizzaApplication {
     public partial class MainForm : Form {
 
-        private int freeIngredients = 0;    // this variable, will get it value down at the < sizeRadioButton_CheckedChanged > fuction
+
         private double totalPizzaPrice = 0;
-        private string saveUsersIngredients = null; // This variable will save and display all the ingredients that the user selected
         private DateTime UserDeliveryTime;
 
         private PizzaSize PizzaSize = new PizzaSize();
+        private Ingredients Ingredients = new Ingredients();
+        private Settings Settings = new Settings();
+        private About about = new About();
+        private LoginPage loginPage = new LoginPage();
 
-        public MainForm()
-       {
+        public MainForm() {
             InitializeComponent();
+
+            loginPage.ShowDialog();
+
+            // This Loop Creates the default Pizza Sizes
+            for (int count = 0; count < 3; count++)         // Sets the Propertie Name of the RadioButton          Sets the Text of the RadioButton
+                createPizzaSizeRadioButton(PizzaSize.defaultPizzaSizes[count] + PizzaSize.propertieNamePizzaSize, PizzaSize.defaultPizzaSizes[count]  + "    € " + PizzaSize.prices[count]);
+                
+            for (int count = 0; count < 10; count++)
+                createIngredientCheckBox(Ingredients.defaultIngredients[count] + Ingredients.propertieNameIngredients, Ingredients.defaultIngredients[count]);
         }
 
         private void orderButton_Click(object sender, EventArgs e) {
@@ -30,7 +40,7 @@ namespace PizzaApplication
             addressForm.ShowDialog();
 
             DialogResult dialogResult = MessageBox.Show($"Pizza Size: {PizzaSize.smallPizzaPrice}" +
-                Environment.NewLine + Environment.NewLine + $"Ingredients: {saveUsersIngredients}" +
+                Environment.NewLine + Environment.NewLine + $"Ingredients: {Ingredients.saveUsersIngredients}" +
                 Environment.NewLine + Environment.NewLine + $"Location Address: {addressForm.userLocationAddress}" +
                 Environment.NewLine + Environment.NewLine + $"Delivery Time:  {UserDeliveryTime.ToShortTimeString() }" +
                 Environment.NewLine + Environment.NewLine + $"Total Amount: {totalPizzaPrice} ",
@@ -47,28 +57,29 @@ namespace PizzaApplication
 
             totalPriceLabel.Visible = true;
             var sizeSelected = (sender as RadioButton).Name;
-            testLabel.Text = sizeSelected;
+            testSizeLabel.Text = sizeSelected;
 
             // Small: up to 2 ingredients for free
             if (sizeSelected == "smallRadioButton")
             {
-                freeIngredients = 2;
+                Ingredients.freeIngredients = 2;
                 totalPizzaPrice = PizzaSize.smallPizzaPrice;
             }
             // Medium: up to 3 ingredients for free
             else if (sizeSelected == "mediumRadioButton")
             {
-                freeIngredients = 3;
+                Ingredients.freeIngredients = 3;
                 totalPizzaPrice = PizzaSize.mediumPizzaPrice;
             }
             // Large: up to 4 ingredients for free
             else
             {
-                freeIngredients = 4;
+                Ingredients.freeIngredients = 4;
                 totalPizzaPrice = PizzaSize.largePizzaPrice;
             }
 
             updatePizzaPrice();
+           
         }
 
         private void sizeClicked(object sender, EventArgs e)
@@ -78,13 +89,50 @@ namespace PizzaApplication
             freeIngredientsLabel.Visible = true;
 
             // Display how many free Ingredients the user has
-            freeIngredientsLabel.Text = $"Free Ingredients: { freeIngredients}";
+            freeIngredientsLabel.Text = $"Free Ingredients: { Ingredients.freeIngredients}";
 
         }
 
+        private void ingredientsCheckBox_CheckedChanged(object sender, EventArgs e) {
 
+            deliveryTimeMaskedTextBox.Enabled = true;
+            var checkbox = (sender as CheckBox);
+            int ingredientsSelected = 0;
 
+            // if the user UnChecked a Box
+            if (checkbox.Checked == false) {
+                ingredientsSelected -= 1;
+                Ingredients.freeIngredients += 1;
 
+                // if Ingredient Unchecked, remove 0,75 cent from the price
+                if (Ingredients.freeIngredients > 0)
+                    totalPizzaPrice -= 0;
+                else
+                    totalPizzaPrice -= Ingredients.extraIngredient;
+            }
+
+            // If user checked a Box
+            else {
+                ingredientsSelected += 1;
+                Ingredients.freeIngredients -= 1;
+                Ingredients.saveUsersIngredients += checkbox.Text + ", ";    // Saves users ingredients in string
+
+                // if the user uses all freeIngredients, 0,75 cent will be added to the price
+                if (Ingredients.freeIngredients < 0)
+                    totalPizzaPrice += Ingredients.extraIngredient;
+            }
+
+            // if the freeIngredients is not under 0 it will show 0, otherwise it will display normally
+            if (Ingredients.freeIngredients > 0)
+                freeIngredientsLabel.Text = $"Free Ingredients: { Ingredients.freeIngredients}";
+            else
+                freeIngredientsLabel.Text = "Free Ingredients: 0"; // if the freeIngredientsLabel under 0 like -1, it will prevent it by showing 0.
+
+            updatePizzaPrice();
+
+            testIngredientLabel.Text = checkbox.Name;   // TEST DELETE AFTER
+
+        }
 
 
         private void deliveryTimeMaskedTextBox_TypeValidationCompleted(object sender, TypeValidationEventArgs e) {
@@ -99,16 +147,17 @@ namespace PizzaApplication
                 // TEST testLabel.Text = " Under the\ntime: " + UserDeliveryTime.ToShortTimeString() + "\n" + timeNow.ToShortTimeString(); 
             }
             else
-                testLabel.Text = "The Time is valid" + UserDeliveryTime + "\n" + timeNow;
+                testSizeLabel.Text = "The Time is valid" + UserDeliveryTime + "\n" + timeNow;
 
         }
 
 
         public void createPizzaSizeRadioButton(string name, string text) {
-
             //pizzaSizeFlowLayoutPanel.Controls.Clear();
+            name = name.Replace(" ", "_");
+
             RadioButton radioButton = new RadioButton();
-            radioButton.Text = text;
+            radioButton.Text = string.Concat(text[0].ToString().ToUpper()) + text.Substring(1);
             radioButton.Name = name;
             radioButton.CheckedChanged += sizeRadioButton_CheckedChanged;
             radioButton.Click += sizeClicked;
@@ -117,7 +166,24 @@ namespace PizzaApplication
             pizzaSizeFlowLayoutPanel.Controls.Add(radioButton);
         }
 
+        public void createIngredientCheckBox(string name, string text) {
+
+            name = name.Replace(" ", "");
+
+            CheckBox checkBox = new CheckBox();
+            checkBox.Text = string.Concat(text[0].ToString().ToUpper()) + text.Substring(1);
+            checkBox.Name = name;
+            checkBox.CheckedChanged += ingredientsCheckBox_CheckedChanged;
+            checkBox.AutoSize = true;
+
+            ingredientsFlowLayoutPanel.Controls.Add(checkBox);
+        }
+
+        private void settingsStripMenuItem_Click(object sender, EventArgs e) { Settings.ShowDialog(); }
+
+        private void aboutStripMenuItem_Click(object sender, EventArgs e) { about.ShowDialog(); }
 
 
-    }
-}
+
+    } // MainForm end
+} // Namespace end

@@ -33,14 +33,21 @@ namespace PizzaApplication
             this.label1 = new System.Windows.Forms.Label();
             this.totalPriceLabel = new System.Windows.Forms.Label();
             this.pizzaSizeGroupBox = new System.Windows.Forms.GroupBox();
+            this.pizzaSizeFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.ingredientsGroupBox = new System.Windows.Forms.GroupBox();
+            this.ingredientsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.freeIngredientsLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.deliveryTimeMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.testLabel = new System.Windows.Forms.Label();
-            this.pizzaSizeFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.testSizeLabel = new System.Windows.Forms.Label();
+            this.testIngredientLabel = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.settingsStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pizzaSizeGroupBox.SuspendLayout();
+            this.ingredientsGroupBox.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // orderButton
@@ -68,6 +75,7 @@ namespace PizzaApplication
             // 
             this.totalPriceLabel.AutoSize = true;
             this.totalPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalPriceLabel.ForeColor = System.Drawing.SystemColors.Highlight;
             this.totalPriceLabel.Location = new System.Drawing.Point(107, 375);
             this.totalPriceLabel.Name = "totalPriceLabel";
             this.totalPriceLabel.Size = new System.Drawing.Size(59, 25);
@@ -86,8 +94,18 @@ namespace PizzaApplication
             this.pizzaSizeGroupBox.TabStop = false;
             this.pizzaSizeGroupBox.Text = "Size";
             // 
+            // pizzaSizeFlowLayoutPanel
+            // 
+            this.pizzaSizeFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pizzaSizeFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.pizzaSizeFlowLayoutPanel.Location = new System.Drawing.Point(3, 22);
+            this.pizzaSizeFlowLayoutPanel.Name = "pizzaSizeFlowLayoutPanel";
+            this.pizzaSizeFlowLayoutPanel.Size = new System.Drawing.Size(253, 160);
+            this.pizzaSizeFlowLayoutPanel.TabIndex = 0;
+            // 
             // ingredientsGroupBox
             // 
+            this.ingredientsGroupBox.Controls.Add(this.ingredientsFlowLayoutPanel);
             this.ingredientsGroupBox.Enabled = false;
             this.ingredientsGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ingredientsGroupBox.Location = new System.Drawing.Point(332, 73);
@@ -96,6 +114,15 @@ namespace PizzaApplication
             this.ingredientsGroupBox.TabIndex = 4;
             this.ingredientsGroupBox.TabStop = false;
             this.ingredientsGroupBox.Text = "Ingredients";
+            // 
+            // ingredientsFlowLayoutPanel
+            // 
+            this.ingredientsFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ingredientsFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.ingredientsFlowLayoutPanel.Location = new System.Drawing.Point(3, 20);
+            this.ingredientsFlowLayoutPanel.Name = "ingredientsFlowLayoutPanel";
+            this.ingredientsFlowLayoutPanel.Size = new System.Drawing.Size(413, 162);
+            this.ingredientsFlowLayoutPanel.TabIndex = 0;
             // 
             // freeIngredientsLabel
             // 
@@ -130,6 +157,7 @@ namespace PizzaApplication
             // 
             // deliveryTimeMaskedTextBox
             // 
+            this.deliveryTimeMaskedTextBox.Enabled = false;
             this.deliveryTimeMaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deliveryTimeMaskedTextBox.Location = new System.Drawing.Point(375, 375);
             this.deliveryTimeMaskedTextBox.Mask = "00:00";
@@ -139,31 +167,58 @@ namespace PizzaApplication
             this.deliveryTimeMaskedTextBox.ValidatingType = typeof(System.DateTime);
             this.deliveryTimeMaskedTextBox.TypeValidationCompleted += new System.Windows.Forms.TypeValidationEventHandler(this.deliveryTimeMaskedTextBox_TypeValidationCompleted);
             // 
-            // testLabel
+            // testSizeLabel
             // 
-            this.testLabel.AutoSize = true;
-            this.testLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.testLabel.Location = new System.Drawing.Point(570, 321);
-            this.testLabel.Name = "testLabel";
-            this.testLabel.Size = new System.Drawing.Size(49, 20);
-            this.testLabel.TabIndex = 9;
-            this.testLabel.Text = "TEST";
+            this.testSizeLabel.AutoSize = true;
+            this.testSizeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.testSizeLabel.Location = new System.Drawing.Point(570, 321);
+            this.testSizeLabel.Name = "testSizeLabel";
+            this.testSizeLabel.Size = new System.Drawing.Size(80, 20);
+            this.testSizeLabel.TabIndex = 9;
+            this.testSizeLabel.Text = "TESTSize";
             // 
-            // pizzaSizeFlowLayoutPanel
+            // testIngredientLabel
             // 
-            this.pizzaSizeFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pizzaSizeFlowLayoutPanel.Location = new System.Drawing.Point(3, 22);
-            this.pizzaSizeFlowLayoutPanel.Name = "pizzaSizeFlowLayoutPanel";
-            this.pizzaSizeFlowLayoutPanel.Size = new System.Drawing.Size(253, 160);
-            this.pizzaSizeFlowLayoutPanel.TabIndex = 0;
+            this.testIngredientLabel.AutoSize = true;
+            this.testIngredientLabel.Location = new System.Drawing.Point(197, 326);
+            this.testIngredientLabel.Name = "testIngredientLabel";
+            this.testIngredientLabel.Size = new System.Drawing.Size(50, 13);
+            this.testIngredientLabel.TabIndex = 10;
+            this.testIngredientLabel.Text = "TESTIng";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsStripMenuItem,
+            this.aboutStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // settingsStripMenuItem
+            // 
+            this.settingsStripMenuItem.Name = "settingsStripMenuItem";
+            this.settingsStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsStripMenuItem.Text = "Settings";
+            this.settingsStripMenuItem.Click += new System.EventHandler(this.settingsStripMenuItem_Click);
+            // 
+            // aboutStripMenuItem
+            // 
+            this.aboutStripMenuItem.Name = "aboutStripMenuItem";
+            this.aboutStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutStripMenuItem.Text = "About";
+            this.aboutStripMenuItem.Click += new System.EventHandler(this.aboutStripMenuItem_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.testLabel);
+            this.Controls.Add(this.testIngredientLabel);
+            this.Controls.Add(this.testSizeLabel);
             this.Controls.Add(this.deliveryTimeMaskedTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -173,9 +228,14 @@ namespace PizzaApplication
             this.Controls.Add(this.totalPriceLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.orderButton);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "PizzaApp";
             this.pizzaSizeGroupBox.ResumeLayout(false);
+            this.ingredientsGroupBox.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,8 +252,13 @@ namespace PizzaApplication
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox deliveryTimeMaskedTextBox;
-        private System.Windows.Forms.Label testLabel;
+        private System.Windows.Forms.Label testSizeLabel;
         private System.Windows.Forms.FlowLayoutPanel pizzaSizeFlowLayoutPanel;
+        private System.Windows.Forms.FlowLayoutPanel ingredientsFlowLayoutPanel;
+        private System.Windows.Forms.Label testIngredientLabel;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem settingsStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutStripMenuItem;
     }
 }
 
