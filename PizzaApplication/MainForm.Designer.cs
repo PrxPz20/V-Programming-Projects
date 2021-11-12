@@ -232,6 +232,7 @@ namespace PizzaApplication
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "PizzaApp";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.pizzaSizeGroupBox.ResumeLayout(false);
             this.ingredientsGroupBox.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);

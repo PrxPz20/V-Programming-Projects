@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PizzaApplication
+namespace The_Concentration_Game
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace PizzaApplication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginPage());
+            Application.Run(new Form1());
         }
     }
 }

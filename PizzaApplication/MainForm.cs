@@ -24,8 +24,8 @@ namespace PizzaApplication {
         public MainForm() {
             InitializeComponent();
 
-            loginPage.ShowDialog();
-
+            LoginPage_Check();
+               
             // This Loop Creates the default Pizza Sizes
             for (int count = 0; count < 3; count++)         // Sets the Propertie Name of the RadioButton          Sets the Text of the RadioButton
                 createPizzaSizeRadioButton(PizzaSize.defaultPizzaSizes[count] + PizzaSize.propertieNamePizzaSize, PizzaSize.defaultPizzaSizes[count]  + "    € " + PizzaSize.prices[count]);
@@ -151,7 +151,6 @@ namespace PizzaApplication {
 
         }
 
-
         public void createPizzaSizeRadioButton(string name, string text) {
             //pizzaSizeFlowLayoutPanel.Controls.Clear();
             name = name.Replace(" ", "_");
@@ -183,7 +182,15 @@ namespace PizzaApplication {
 
         private void aboutStripMenuItem_Click(object sender, EventArgs e) { about.ShowDialog(); }
 
+        private void LoginPage_Check() {
 
+            loginPage.ShowDialog();
+
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e) {
+            e.Cancel = false;
+        }
 
     } // MainForm end
 } // Namespace end
