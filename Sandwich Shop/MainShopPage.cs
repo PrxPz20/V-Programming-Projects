@@ -15,6 +15,9 @@ namespace Sandwich_Shop
 
         private double totalPrice;
 
+        Bread Bread = new Bread();
+        Ingredients Ingredients = new Ingredients();
+
         public mainShopForm() {  InitializeComponent(); }
 
 
@@ -23,15 +26,21 @@ namespace Sandwich_Shop
             totalPriceLabel.Text = "$ " + totalPrice.ToString();
         }
 
-        private void createBreadTypesCheckBox() {
+        private void createBreadTypesCheckBox(string name, string text) {
 
 
             CheckBox checkBox = new CheckBox();
+            RadioButton radioButton = new RadioButton();
 
+            checkBox.Name = name;
+            checkBox.AutoSize = true;
 
         }
 
+        private void createIngredientTypesCheckBox(string name, string text)
+        {
 
+        }
 
 
     }
