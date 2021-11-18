@@ -63,9 +63,9 @@ namespace The_Concentration_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Baby_Dack {
+        internal static System.Drawing.Bitmap image0 {
             get {
-                object obj = ResourceManager.GetObject("Baby Dack", resourceCulture);
+                object obj = ResourceManager.GetObject("image0", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace The_Concentration_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Baby_Goose {
+        internal static System.Drawing.Bitmap image1 {
             get {
-                object obj = ResourceManager.GetObject("Baby Goose", resourceCulture);
+                object obj = ResourceManager.GetObject("image1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,99 +83,9 @@ namespace The_Concentration_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Baby_Sheep {
+        internal static System.Drawing.Bitmap image10 {
             get {
-                object obj = ResourceManager.GetObject("Baby Sheep", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Bird {
-            get {
-                object obj = ResourceManager.GetObject("Bird", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cat {
-            get {
-                object obj = ResourceManager.GetObject("Cat", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Chicken {
-            get {
-                object obj = ResourceManager.GetObject("Chicken", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cock {
-            get {
-                object obj = ResourceManager.GetObject("cock", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cow {
-            get {
-                object obj = ResourceManager.GetObject("Cow", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Dog {
-            get {
-                object obj = ResourceManager.GetObject("Dog", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Goose {
-            get {
-                object obj = ResourceManager.GetObject("Goose", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Hedgehog {
-            get {
-                object obj = ResourceManager.GetObject("Hedgehog", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Horse {
-            get {
-                object obj = ResourceManager.GetObject("Horse", resourceCulture);
+                object obj = ResourceManager.GetObject("image10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,6 +103,56 @@ namespace The_Concentration_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image12 {
+            get {
+                object obj = ResourceManager.GetObject("image12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image13 {
+            get {
+                object obj = ResourceManager.GetObject("image13", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image14 {
+            get {
+                object obj = ResourceManager.GetObject("image14", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image15 {
+            get {
+                object obj = ResourceManager.GetObject("image15", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image16 {
+            get {
+                object obj = ResourceManager.GetObject("image16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap image2 {
             get {
                 object obj = ResourceManager.GetObject("image2", resourceCulture);
@@ -203,9 +163,69 @@ namespace The_Concentration_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Pig {
+        internal static System.Drawing.Bitmap image3 {
             get {
-                object obj = ResourceManager.GetObject("Pig", resourceCulture);
+                object obj = ResourceManager.GetObject("image3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image4 {
+            get {
+                object obj = ResourceManager.GetObject("image4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image5 {
+            get {
+                object obj = ResourceManager.GetObject("image5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image6 {
+            get {
+                object obj = ResourceManager.GetObject("image6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image7 {
+            get {
+                object obj = ResourceManager.GetObject("image7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image8 {
+            get {
+                object obj = ResourceManager.GetObject("image8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image9 {
+            get {
+                object obj = ResourceManager.GetObject("image9", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,26 +236,6 @@ namespace The_Concentration_Game.Properties {
         internal static System.Drawing.Bitmap qm {
             get {
                 object obj = ResourceManager.GetObject("qm", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Rabbit {
-            get {
-                object obj = ResourceManager.GetObject("Rabbit", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Sheep {
-            get {
-                object obj = ResourceManager.GetObject("Sheep", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

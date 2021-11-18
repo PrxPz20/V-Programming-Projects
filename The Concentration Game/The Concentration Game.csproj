@@ -52,6 +52,7 @@
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="CardClass.cs" />
     <Compile Include="MainPage.cs">
       <SubType>Form</SubType>
     </Compile>
