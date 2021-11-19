@@ -31,6 +31,17 @@ namespace The_Concentration_Game
         {
             this.components = new System.ComponentModel.Container();
             this.cardsGroupBox = new System.Windows.Forms.GroupBox();
+            this.cardFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.card1PictureBox = new System.Windows.Forms.PictureBox();
+            this.card2PictureBox = new System.Windows.Forms.PictureBox();
+            this.card3PictureBox = new System.Windows.Forms.PictureBox();
+            this.card_4_PictureBox = new System.Windows.Forms.PictureBox();
+            this.card_5_PictureBox = new System.Windows.Forms.PictureBox();
+            this.card_6_PictureBox = new System.Windows.Forms.PictureBox();
+            this.card_7_PictureBox = new System.Windows.Forms.PictureBox();
+            this.card_8_PictureBox = new System.Windows.Forms.PictureBox();
+            this.card_9_PictureBox = new System.Windows.Forms.PictureBox();
+            this.card_10_PictureBox = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gameStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,21 +57,9 @@ namespace The_Concentration_Game
             this.hideImageTimer = new System.Windows.Forms.Timer(this.components);
             this.CountDownLabel = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
-            this.card1PictureBox = new System.Windows.Forms.PictureBox();
-            this.cardFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.card2PictureBox = new System.Windows.Forms.PictureBox();
-            this.card3PictureBox = new System.Windows.Forms.PictureBox();
-            this.card_4_PictureBox = new System.Windows.Forms.PictureBox();
-            this.card_5_PictureBox = new System.Windows.Forms.PictureBox();
-            this.card_6_PictureBox = new System.Windows.Forms.PictureBox();
-            this.card_7_PictureBox = new System.Windows.Forms.PictureBox();
-            this.card_8_PictureBox = new System.Windows.Forms.PictureBox();
-            this.card_9_PictureBox = new System.Windows.Forms.PictureBox();
-            this.card_10_PictureBox = new System.Windows.Forms.PictureBox();
             this.cardsGroupBox.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.card1PictureBox)).BeginInit();
             this.cardFlowLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.card1PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.card2PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.card3PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.card_4_PictureBox)).BeginInit();
@@ -70,6 +69,7 @@ namespace The_Concentration_Game
             ((System.ComponentModel.ISupportInitialize)(this.card_8_PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.card_9_PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.card_10_PictureBox)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cardsGroupBox
@@ -80,6 +80,116 @@ namespace The_Concentration_Game
             this.cardsGroupBox.Size = new System.Drawing.Size(353, 198);
             this.cardsGroupBox.TabIndex = 0;
             this.cardsGroupBox.TabStop = false;
+            // 
+            // cardFlowLayoutPanel
+            // 
+            this.cardFlowLayoutPanel.Controls.Add(this.card1PictureBox);
+            this.cardFlowLayoutPanel.Controls.Add(this.card2PictureBox);
+            this.cardFlowLayoutPanel.Controls.Add(this.card3PictureBox);
+            this.cardFlowLayoutPanel.Controls.Add(this.card_4_PictureBox);
+            this.cardFlowLayoutPanel.Controls.Add(this.card_5_PictureBox);
+            this.cardFlowLayoutPanel.Controls.Add(this.card_6_PictureBox);
+            this.cardFlowLayoutPanel.Controls.Add(this.card_7_PictureBox);
+            this.cardFlowLayoutPanel.Controls.Add(this.card_8_PictureBox);
+            this.cardFlowLayoutPanel.Controls.Add(this.card_9_PictureBox);
+            this.cardFlowLayoutPanel.Controls.Add(this.card_10_PictureBox);
+            this.cardFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cardFlowLayoutPanel.Location = new System.Drawing.Point(3, 16);
+            this.cardFlowLayoutPanel.Name = "cardFlowLayoutPanel";
+            this.cardFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(3);
+            this.cardFlowLayoutPanel.Size = new System.Drawing.Size(347, 179);
+            this.cardFlowLayoutPanel.TabIndex = 0;
+            // 
+            // card1PictureBox
+            // 
+            this.card1PictureBox.Location = new System.Drawing.Point(6, 6);
+            this.card1PictureBox.Name = "card1PictureBox";
+            this.card1PictureBox.Size = new System.Drawing.Size(60, 60);
+            this.card1PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.card1PictureBox.TabIndex = 0;
+            this.card1PictureBox.TabStop = false;
+            this.card1PictureBox.Click += new System.EventHandler(this.clickImage);
+            // 
+            // card2PictureBox
+            // 
+            this.card2PictureBox.Location = new System.Drawing.Point(72, 6);
+            this.card2PictureBox.Name = "card2PictureBox";
+            this.card2PictureBox.Size = new System.Drawing.Size(60, 60);
+            this.card2PictureBox.TabIndex = 1;
+            this.card2PictureBox.TabStop = false;
+            this.card2PictureBox.Click += new System.EventHandler(this.clickImage);
+            // 
+            // card3PictureBox
+            // 
+            this.card3PictureBox.Location = new System.Drawing.Point(138, 6);
+            this.card3PictureBox.Name = "card3PictureBox";
+            this.card3PictureBox.Size = new System.Drawing.Size(60, 60);
+            this.card3PictureBox.TabIndex = 2;
+            this.card3PictureBox.TabStop = false;
+            this.card3PictureBox.Click += new System.EventHandler(this.clickImage);
+            // 
+            // card_4_PictureBox
+            // 
+            this.card_4_PictureBox.Location = new System.Drawing.Point(204, 6);
+            this.card_4_PictureBox.Name = "card_4_PictureBox";
+            this.card_4_PictureBox.Size = new System.Drawing.Size(60, 60);
+            this.card_4_PictureBox.TabIndex = 3;
+            this.card_4_PictureBox.TabStop = false;
+            this.card_4_PictureBox.Click += new System.EventHandler(this.clickImage);
+            // 
+            // card_5_PictureBox
+            // 
+            this.card_5_PictureBox.Location = new System.Drawing.Point(270, 6);
+            this.card_5_PictureBox.Name = "card_5_PictureBox";
+            this.card_5_PictureBox.Size = new System.Drawing.Size(60, 60);
+            this.card_5_PictureBox.TabIndex = 4;
+            this.card_5_PictureBox.TabStop = false;
+            this.card_5_PictureBox.Click += new System.EventHandler(this.clickImage);
+            // 
+            // card_6_PictureBox
+            // 
+            this.card_6_PictureBox.Location = new System.Drawing.Point(6, 72);
+            this.card_6_PictureBox.Name = "card_6_PictureBox";
+            this.card_6_PictureBox.Size = new System.Drawing.Size(60, 60);
+            this.card_6_PictureBox.TabIndex = 5;
+            this.card_6_PictureBox.TabStop = false;
+            this.card_6_PictureBox.Click += new System.EventHandler(this.clickImage);
+            // 
+            // card_7_PictureBox
+            // 
+            this.card_7_PictureBox.Location = new System.Drawing.Point(72, 72);
+            this.card_7_PictureBox.Name = "card_7_PictureBox";
+            this.card_7_PictureBox.Size = new System.Drawing.Size(60, 60);
+            this.card_7_PictureBox.TabIndex = 6;
+            this.card_7_PictureBox.TabStop = false;
+            this.card_7_PictureBox.Click += new System.EventHandler(this.clickImage);
+            // 
+            // card_8_PictureBox
+            // 
+            this.card_8_PictureBox.Location = new System.Drawing.Point(138, 72);
+            this.card_8_PictureBox.Name = "card_8_PictureBox";
+            this.card_8_PictureBox.Size = new System.Drawing.Size(60, 60);
+            this.card_8_PictureBox.TabIndex = 7;
+            this.card_8_PictureBox.TabStop = false;
+            this.card_8_PictureBox.Click += new System.EventHandler(this.clickImage);
+            // 
+            // card_9_PictureBox
+            // 
+            this.card_9_PictureBox.Location = new System.Drawing.Point(204, 72);
+            this.card_9_PictureBox.Name = "card_9_PictureBox";
+            this.card_9_PictureBox.Size = new System.Drawing.Size(60, 60);
+            this.card_9_PictureBox.TabIndex = 8;
+            this.card_9_PictureBox.TabStop = false;
+            this.card_9_PictureBox.Click += new System.EventHandler(this.clickImage);
+            // 
+            // card_10_PictureBox
+            // 
+            this.card_10_PictureBox.Location = new System.Drawing.Point(270, 72);
+            this.card_10_PictureBox.Name = "card_10_PictureBox";
+            this.card_10_PictureBox.Size = new System.Drawing.Size(60, 60);
+            this.card_10_PictureBox.TabIndex = 9;
+            this.card_10_PictureBox.TabStop = false;
+            this.card_10_PictureBox.Click += new System.EventHandler(this.clickImage);
             // 
             // menuStrip1
             // 
@@ -174,7 +284,7 @@ namespace The_Concentration_Game
             // CountDownLabel
             // 
             this.CountDownLabel.AutoSize = true;
-            this.CountDownLabel.Location = new System.Drawing.Point(724, 43);
+            this.CountDownLabel.Location = new System.Drawing.Point(447, 115);
             this.CountDownLabel.Name = "CountDownLabel";
             this.CountDownLabel.Size = new System.Drawing.Size(35, 13);
             this.CountDownLabel.TabIndex = 2;
@@ -189,106 +299,6 @@ namespace The_Concentration_Game
             this.startButton.Text = "button1";
             this.startButton.UseVisualStyleBackColor = true;
             // 
-            // card1PictureBox
-            // 
-            this.card1PictureBox.Location = new System.Drawing.Point(6, 6);
-            this.card1PictureBox.Name = "card1PictureBox";
-            this.card1PictureBox.Size = new System.Drawing.Size(60, 60);
-            this.card1PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.card1PictureBox.TabIndex = 0;
-            this.card1PictureBox.TabStop = false;
-            // 
-            // cardFlowLayoutPanel
-            // 
-            this.cardFlowLayoutPanel.Controls.Add(this.card1PictureBox);
-            this.cardFlowLayoutPanel.Controls.Add(this.card2PictureBox);
-            this.cardFlowLayoutPanel.Controls.Add(this.card3PictureBox);
-            this.cardFlowLayoutPanel.Controls.Add(this.card_4_PictureBox);
-            this.cardFlowLayoutPanel.Controls.Add(this.card_5_PictureBox);
-            this.cardFlowLayoutPanel.Controls.Add(this.card_6_PictureBox);
-            this.cardFlowLayoutPanel.Controls.Add(this.card_7_PictureBox);
-            this.cardFlowLayoutPanel.Controls.Add(this.card_8_PictureBox);
-            this.cardFlowLayoutPanel.Controls.Add(this.card_9_PictureBox);
-            this.cardFlowLayoutPanel.Controls.Add(this.card_10_PictureBox);
-            this.cardFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cardFlowLayoutPanel.Location = new System.Drawing.Point(3, 16);
-            this.cardFlowLayoutPanel.Name = "cardFlowLayoutPanel";
-            this.cardFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(3);
-            this.cardFlowLayoutPanel.Size = new System.Drawing.Size(347, 179);
-            this.cardFlowLayoutPanel.TabIndex = 0;
-            // 
-            // card2PictureBox
-            // 
-            this.card2PictureBox.Location = new System.Drawing.Point(72, 6);
-            this.card2PictureBox.Name = "card2PictureBox";
-            this.card2PictureBox.Size = new System.Drawing.Size(60, 60);
-            this.card2PictureBox.TabIndex = 1;
-            this.card2PictureBox.TabStop = false;
-            // 
-            // card3PictureBox
-            // 
-            this.card3PictureBox.Location = new System.Drawing.Point(138, 6);
-            this.card3PictureBox.Name = "card3PictureBox";
-            this.card3PictureBox.Size = new System.Drawing.Size(60, 60);
-            this.card3PictureBox.TabIndex = 2;
-            this.card3PictureBox.TabStop = false;
-            // 
-            // card_4_PictureBox
-            // 
-            this.card_4_PictureBox.Location = new System.Drawing.Point(204, 6);
-            this.card_4_PictureBox.Name = "card_4_PictureBox";
-            this.card_4_PictureBox.Size = new System.Drawing.Size(60, 60);
-            this.card_4_PictureBox.TabIndex = 3;
-            this.card_4_PictureBox.TabStop = false;
-            // 
-            // card_5_PictureBox
-            // 
-            this.card_5_PictureBox.Location = new System.Drawing.Point(270, 6);
-            this.card_5_PictureBox.Name = "card_5_PictureBox";
-            this.card_5_PictureBox.Size = new System.Drawing.Size(60, 60);
-            this.card_5_PictureBox.TabIndex = 4;
-            this.card_5_PictureBox.TabStop = false;
-            // 
-            // card_6_PictureBox
-            // 
-            this.card_6_PictureBox.Location = new System.Drawing.Point(6, 72);
-            this.card_6_PictureBox.Name = "card_6_PictureBox";
-            this.card_6_PictureBox.Size = new System.Drawing.Size(60, 60);
-            this.card_6_PictureBox.TabIndex = 5;
-            this.card_6_PictureBox.TabStop = false;
-            // 
-            // card_7_PictureBox
-            // 
-            this.card_7_PictureBox.Location = new System.Drawing.Point(72, 72);
-            this.card_7_PictureBox.Name = "card_7_PictureBox";
-            this.card_7_PictureBox.Size = new System.Drawing.Size(60, 60);
-            this.card_7_PictureBox.TabIndex = 6;
-            this.card_7_PictureBox.TabStop = false;
-            // 
-            // card_8_PictureBox
-            // 
-            this.card_8_PictureBox.Location = new System.Drawing.Point(138, 72);
-            this.card_8_PictureBox.Name = "card_8_PictureBox";
-            this.card_8_PictureBox.Size = new System.Drawing.Size(60, 60);
-            this.card_8_PictureBox.TabIndex = 7;
-            this.card_8_PictureBox.TabStop = false;
-            // 
-            // card_9_PictureBox
-            // 
-            this.card_9_PictureBox.Location = new System.Drawing.Point(204, 72);
-            this.card_9_PictureBox.Name = "card_9_PictureBox";
-            this.card_9_PictureBox.Size = new System.Drawing.Size(60, 60);
-            this.card_9_PictureBox.TabIndex = 8;
-            this.card_9_PictureBox.TabStop = false;
-            // 
-            // card_10_PictureBox
-            // 
-            this.card_10_PictureBox.Location = new System.Drawing.Point(270, 72);
-            this.card_10_PictureBox.Name = "card_10_PictureBox";
-            this.card_10_PictureBox.Size = new System.Drawing.Size(60, 60);
-            this.card_10_PictureBox.TabIndex = 9;
-            this.card_10_PictureBox.TabStop = false;
-            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,10 +312,8 @@ namespace The_Concentration_Game
             this.Name = "MainPage";
             this.Text = "Form1";
             this.cardsGroupBox.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.card1PictureBox)).EndInit();
             this.cardFlowLayoutPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.card1PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.card2PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.card3PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.card_4_PictureBox)).EndInit();
@@ -315,6 +323,8 @@ namespace The_Concentration_Game
             ((System.ComponentModel.ISupportInitialize)(this.card_8_PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.card_9_PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.card_10_PictureBox)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
