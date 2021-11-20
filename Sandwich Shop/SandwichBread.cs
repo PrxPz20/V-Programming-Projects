@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using Newtonsoft.Json;
+
 
 namespace Sandwich_Shop
 {
@@ -14,8 +17,6 @@ namespace Sandwich_Shop
         public string breadPrice { get; set; }  // i will use the Convert.ToDouble to convert the string to double, so i can make the calcu.
 
 
-
-
         public SandwichBread() { }
 
         public SandwichBread(string bread_Name, string bread_Price) {
@@ -25,11 +26,7 @@ namespace Sandwich_Shop
         }
 
 
-
-
-
-
-        /*
+        /*      DELETE IT 
         public List<string> defaultBreadTypes = new List<string>()
         {
             "Baguette", "Breadstick", "Brioche", "Ciabatta"
