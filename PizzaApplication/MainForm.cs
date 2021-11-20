@@ -24,7 +24,7 @@ namespace PizzaApplication {
         public MainForm() {
             InitializeComponent();
 
-            LoginPage_Check();
+            //LoginPage_Check();
                
             // This Loop Creates the default Pizza Sizes
             for (int count = 0; count < 3; count++)         // Sets the Propertie Name of the RadioButton          Sets the Text of the RadioButton

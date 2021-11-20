@@ -15,8 +15,10 @@ namespace Sandwich_Shop
 
         private double totalPrice;
 
-        Bread Bread = new Bread();
-        Ingredients Ingredients = new Ingredients();
+        SandwichBread Bread = new SandwichBread();
+        SandwichIngredients Ingredients = new SandwichIngredients();
+        Settings Settings = new Settings();
+
 
         public mainShopForm() {  InitializeComponent(); }
 
@@ -28,7 +30,6 @@ namespace Sandwich_Shop
 
         private void createBreadTypesCheckBox(string name, string text) {
 
-
             CheckBox checkBox = new CheckBox();
             RadioButton radioButton = new RadioButton();
 
@@ -37,11 +38,14 @@ namespace Sandwich_Shop
 
         }
 
-        private void createIngredientTypesCheckBox(string name, string text)
-        {
+        private void createIngredientTypesCheckBox(string name, string text) {
 
         }
 
+        private void settingsStripMenuItem_Click(object sender, EventArgs e) {
 
+            
+            Settings.ShowDialog();
+        }
     }
 }

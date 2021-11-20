@@ -26,9 +26,15 @@ namespace PizzaApplication {
             FreeIngredientCount = freeIngredientCount;
         }
 
+
+
         public string Name { get; set; }
         public double Price { get; set; }
         public int FreeIngredientCount { get; set; }
+
+
+
+
 
 
     }

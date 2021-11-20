@@ -46,9 +46,9 @@ namespace PizzaApplication
             // pizzasizeGroupBox
             // 
             this.pizzasizeGroupBox.Controls.Add(this.pizzasizeDataGridView);
-            this.pizzasizeGroupBox.Location = new System.Drawing.Point(24, 30);
+            this.pizzasizeGroupBox.Location = new System.Drawing.Point(21, 26);
             this.pizzasizeGroupBox.Name = "pizzasizeGroupBox";
-            this.pizzasizeGroupBox.Size = new System.Drawing.Size(356, 264);
+            this.pizzasizeGroupBox.Size = new System.Drawing.Size(305, 229);
             this.pizzasizeGroupBox.TabIndex = 0;
             this.pizzasizeGroupBox.TabStop = false;
             this.pizzasizeGroupBox.Text = "Size";
@@ -58,38 +58,38 @@ namespace PizzaApplication
             this.pizzasizeDataGridView.AllowUserToOrderColumns = true;
             this.pizzasizeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.pizzasizeDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pizzasizeDataGridView.Location = new System.Drawing.Point(3, 19);
+            this.pizzasizeDataGridView.Location = new System.Drawing.Point(3, 16);
             this.pizzasizeDataGridView.Name = "pizzasizeDataGridView";
             this.pizzasizeDataGridView.RowTemplate.Height = 25;
-            this.pizzasizeDataGridView.Size = new System.Drawing.Size(350, 242);
+            this.pizzasizeDataGridView.Size = new System.Drawing.Size(299, 210);
             this.pizzasizeDataGridView.TabIndex = 0;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(363, 242);
+            this.dataGridView1.Size = new System.Drawing.Size(310, 210);
             this.dataGridView1.TabIndex = 1;
             // 
             // ingredientsGroupBox
             // 
             this.ingredientsGroupBox.Controls.Add(this.dataGridView1);
-            this.ingredientsGroupBox.Location = new System.Drawing.Point(419, 30);
+            this.ingredientsGroupBox.Location = new System.Drawing.Point(359, 26);
             this.ingredientsGroupBox.Name = "ingredientsGroupBox";
-            this.ingredientsGroupBox.Size = new System.Drawing.Size(369, 264);
+            this.ingredientsGroupBox.Size = new System.Drawing.Size(316, 229);
             this.ingredientsGroupBox.TabIndex = 2;
             this.ingredientsGroupBox.TabStop = false;
             this.ingredientsGroupBox.Text = "Ingredients";
             // 
             // saveSizeBuitton
             // 
-            this.saveSizeBuitton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.saveSizeBuitton.Location = new System.Drawing.Point(27, 322);
+            this.saveSizeBuitton.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.saveSizeBuitton.Location = new System.Drawing.Point(23, 279);
             this.saveSizeBuitton.Name = "saveSizeBuitton";
-            this.saveSizeBuitton.Size = new System.Drawing.Size(82, 35);
+            this.saveSizeBuitton.Size = new System.Drawing.Size(70, 30);
             this.saveSizeBuitton.TabIndex = 3;
             this.saveSizeBuitton.Text = "Save";
             this.saveSizeBuitton.UseVisualStyleBackColor = true;
@@ -97,40 +97,40 @@ namespace PizzaApplication
             // 
             // resetSizebutton
             // 
-            this.resetSizebutton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.resetSizebutton.Location = new System.Drawing.Point(115, 322);
+            this.resetSizebutton.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.resetSizebutton.Location = new System.Drawing.Point(99, 279);
             this.resetSizebutton.Name = "resetSizebutton";
-            this.resetSizebutton.Size = new System.Drawing.Size(92, 35);
+            this.resetSizebutton.Size = new System.Drawing.Size(79, 30);
             this.resetSizebutton.TabIndex = 4;
             this.resetSizebutton.Text = "Reset";
             this.resetSizebutton.UseVisualStyleBackColor = true;
             // 
             // saveIngredientsButton
             // 
-            this.saveIngredientsButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.saveIngredientsButton.Location = new System.Drawing.Point(422, 322);
+            this.saveIngredientsButton.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.saveIngredientsButton.Location = new System.Drawing.Point(362, 279);
             this.saveIngredientsButton.Name = "saveIngredientsButton";
-            this.saveIngredientsButton.Size = new System.Drawing.Size(80, 35);
+            this.saveIngredientsButton.Size = new System.Drawing.Size(69, 30);
             this.saveIngredientsButton.TabIndex = 5;
             this.saveIngredientsButton.Text = "Save";
             this.saveIngredientsButton.UseVisualStyleBackColor = true;
             // 
             // resetIngredientsButton
             // 
-            this.resetIngredientsButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.resetIngredientsButton.Location = new System.Drawing.Point(508, 322);
+            this.resetIngredientsButton.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.resetIngredientsButton.Location = new System.Drawing.Point(435, 279);
             this.resetIngredientsButton.Name = "resetIngredientsButton";
-            this.resetIngredientsButton.Size = new System.Drawing.Size(92, 35);
+            this.resetIngredientsButton.Size = new System.Drawing.Size(79, 30);
             this.resetIngredientsButton.TabIndex = 6;
             this.resetIngredientsButton.Text = "Reset";
             this.resetIngredientsButton.UseVisualStyleBackColor = true;
             // 
             // Settings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(686, 390);
             this.Controls.Add(this.resetIngredientsButton);
             this.Controls.Add(this.saveIngredientsButton);
             this.Controls.Add(this.resetSizebutton);

@@ -31,13 +31,17 @@ namespace Sandwich_Shop
         {
             this.shopNameLabel = new System.Windows.Forms.Label();
             this.breadGroupBox = new System.Windows.Forms.GroupBox();
+            this.breadFlowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.ingredientsGroupBox = new System.Windows.Forms.GroupBox();
+            this.ingredientsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.priceTextLabel = new System.Windows.Forms.Label();
             this.totalPriceLabel = new System.Windows.Forms.Label();
-            this.breadFlowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.ingredientsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.settingsStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.breadGroupBox.SuspendLayout();
             this.ingredientsGroupBox.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // shopNameLabel
@@ -61,6 +65,15 @@ namespace Sandwich_Shop
             this.breadGroupBox.TabStop = false;
             this.breadGroupBox.Text = "Choice you bread type";
             // 
+            // breadFlowLayoutPanel1
+            // 
+            this.breadFlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.breadFlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.breadFlowLayoutPanel1.Location = new System.Drawing.Point(3, 22);
+            this.breadFlowLayoutPanel1.Name = "breadFlowLayoutPanel1";
+            this.breadFlowLayoutPanel1.Size = new System.Drawing.Size(322, 180);
+            this.breadFlowLayoutPanel1.TabIndex = 0;
+            // 
             // ingredientsGroupBox
             // 
             this.ingredientsGroupBox.Controls.Add(this.ingredientsFlowLayoutPanel);
@@ -71,6 +84,14 @@ namespace Sandwich_Shop
             this.ingredientsGroupBox.TabIndex = 2;
             this.ingredientsGroupBox.TabStop = false;
             this.ingredientsGroupBox.Text = "Choice your ingredients";
+            // 
+            // ingredientsFlowLayoutPanel
+            // 
+            this.ingredientsFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ingredientsFlowLayoutPanel.Location = new System.Drawing.Point(3, 22);
+            this.ingredientsFlowLayoutPanel.Name = "ingredientsFlowLayoutPanel";
+            this.ingredientsFlowLayoutPanel.Size = new System.Drawing.Size(381, 180);
+            this.ingredientsFlowLayoutPanel.TabIndex = 0;
             // 
             // priceTextLabel
             // 
@@ -92,22 +113,29 @@ namespace Sandwich_Shop
             this.totalPriceLabel.TabIndex = 4;
             this.totalPriceLabel.Text = "Totalprice";
             // 
-            // breadFlowLayoutPanel1
+            // menuStrip1
             // 
-            this.breadFlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.breadFlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.breadFlowLayoutPanel1.Location = new System.Drawing.Point(3, 22);
-            this.breadFlowLayoutPanel1.Name = "breadFlowLayoutPanel1";
-            this.breadFlowLayoutPanel1.Size = new System.Drawing.Size(322, 180);
-            this.breadFlowLayoutPanel1.TabIndex = 0;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // ingredientsFlowLayoutPanel
+            // settingsStripMenuItem
             // 
-            this.ingredientsFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ingredientsFlowLayoutPanel.Location = new System.Drawing.Point(3, 22);
-            this.ingredientsFlowLayoutPanel.Name = "ingredientsFlowLayoutPanel";
-            this.ingredientsFlowLayoutPanel.Size = new System.Drawing.Size(381, 180);
-            this.ingredientsFlowLayoutPanel.TabIndex = 0;
+            this.settingsStripMenuItem.Name = "settingsStripMenuItem";
+            this.settingsStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsStripMenuItem.Text = "Settings";
+            this.settingsStripMenuItem.Click += new System.EventHandler(this.settingsStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
             // 
             // mainShopForm
             // 
@@ -119,10 +147,14 @@ namespace Sandwich_Shop
             this.Controls.Add(this.ingredientsGroupBox);
             this.Controls.Add(this.breadGroupBox);
             this.Controls.Add(this.shopNameLabel);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "mainShopForm";
             this.Text = "Sandwich Shop";
             this.breadGroupBox.ResumeLayout(false);
             this.ingredientsGroupBox.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,6 +169,9 @@ namespace Sandwich_Shop
         private System.Windows.Forms.FlowLayoutPanel ingredientsFlowLayoutPanel;
         private System.Windows.Forms.Label priceTextLabel;
         private System.Windows.Forms.Label totalPriceLabel;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem settingsStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 
