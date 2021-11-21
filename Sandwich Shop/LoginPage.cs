@@ -24,10 +24,15 @@ namespace Sandwich_Shop
             Login.Add(new SandwichLogin("Admin", "Admin"));
         }
 
-        
+        private void loginButton_Click(object sender, EventArgs e) {
+
+            if (userNameTextBox.Text == "Admin")
+                MessageBox.Show("Successfully Login ");
+            else
+                MessageBox.Show("Try again");
 
 
-
+        }
 
 
     }

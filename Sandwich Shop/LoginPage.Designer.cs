@@ -32,8 +32,8 @@ namespace Sandwich_Shop
             this.label1 = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.loginContentGroupBox = new System.Windows.Forms.GroupBox();
             this.shopNameLabel = new System.Windows.Forms.Label();
@@ -59,6 +59,7 @@ namespace Sandwich_Shop
             this.loginButton.TabIndex = 1;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // label2
             // 
@@ -70,21 +71,21 @@ namespace Sandwich_Shop
             this.label2.TabIndex = 2;
             this.label2.Text = "Password:";
             // 
-            // textBox1
+            // passwordTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(113, 128);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(187, 24);
-            this.textBox1.TabIndex = 3;
+            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTextBox.Location = new System.Drawing.Point(113, 128);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(187, 24);
+            this.passwordTextBox.TabIndex = 3;
             // 
-            // textBox2
+            // userNameTextBox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(113, 83);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(187, 24);
-            this.textBox2.TabIndex = 4;
+            this.userNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameTextBox.Location = new System.Drawing.Point(113, 83);
+            this.userNameTextBox.Name = "userNameTextBox";
+            this.userNameTextBox.Size = new System.Drawing.Size(187, 24);
+            this.userNameTextBox.TabIndex = 4;
             // 
             // label3
             // 
@@ -101,9 +102,9 @@ namespace Sandwich_Shop
             this.loginContentGroupBox.Controls.Add(this.label1);
             this.loginContentGroupBox.Controls.Add(this.label3);
             this.loginContentGroupBox.Controls.Add(this.loginButton);
-            this.loginContentGroupBox.Controls.Add(this.textBox2);
+            this.loginContentGroupBox.Controls.Add(this.userNameTextBox);
             this.loginContentGroupBox.Controls.Add(this.label2);
-            this.loginContentGroupBox.Controls.Add(this.textBox1);
+            this.loginContentGroupBox.Controls.Add(this.passwordTextBox);
             this.loginContentGroupBox.Location = new System.Drawing.Point(105, 65);
             this.loginContentGroupBox.Name = "loginContentGroupBox";
             this.loginContentGroupBox.Size = new System.Drawing.Size(364, 258);
@@ -141,8 +142,8 @@ namespace Sandwich_Shop
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.TextBox userNameTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox loginContentGroupBox;
         private System.Windows.Forms.Label shopNameLabel;

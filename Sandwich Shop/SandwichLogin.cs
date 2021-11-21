@@ -14,15 +14,18 @@ namespace Sandwich_Shop {
         public string userName { get; set; }
         public string passWord { get; set; }
 
-        private string userLoginDataFile = "LoginData..json";
+        private string userLoginDataFile = "LoginData.json";
 
         public SandwichLogin() {
         
         }
 
         public SandwichLogin(string UserName, string Password) {
+
             userName = UserName;
             passWord = Password;
+
+            saveDefaultLoginData();
         }
 
 
@@ -34,8 +37,26 @@ namespace Sandwich_Shop {
             File.WriteAllText(userLoginDataFile, sirializedUserName, Encoding.UTF8);
             File.WriteAllText(userLoginDataFile, sirializedPassword, Encoding.UTF8);
             
+            
+        }
+
+        private string LoadDefaultLoginData() {
+
+            if (File.Exists(userLoginDataFile))
+            {
+
+
+
+
+                return "";
+            }
+            else
+                return "";
+
+
 
         }
+
 
 
     }

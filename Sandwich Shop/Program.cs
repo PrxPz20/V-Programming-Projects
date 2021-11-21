@@ -16,7 +16,8 @@ namespace Sandwich_Shop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new mainShopForm());
+            //Application.Run(new mainShopForm());
+            Application.Run(new LoginPage());
         }
     }
 }
