@@ -42,6 +42,7 @@ namespace Sandwich_Shop
             this.orderButton = new System.Windows.Forms.Button();
             this.displayOrderListBox = new System.Windows.Forms.ListBox();
             this.listBoxGroupBox = new System.Windows.Forms.GroupBox();
+            this.maxIngredientLabel = new System.Windows.Forms.Label();
             this.breadGroupBox.SuspendLayout();
             this.ingredientsGroupBox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -102,7 +103,7 @@ namespace Sandwich_Shop
             // 
             this.priceTextLabel.AutoSize = true;
             this.priceTextLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceTextLabel.Location = new System.Drawing.Point(16, 547);
+            this.priceTextLabel.Location = new System.Drawing.Point(16, 576);
             this.priceTextLabel.Name = "priceTextLabel";
             this.priceTextLabel.Size = new System.Drawing.Size(66, 25);
             this.priceTextLabel.TabIndex = 3;
@@ -112,7 +113,7 @@ namespace Sandwich_Shop
             // 
             this.totalPriceLabel.AutoSize = true;
             this.totalPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalPriceLabel.Location = new System.Drawing.Point(88, 547);
+            this.totalPriceLabel.Location = new System.Drawing.Point(88, 576);
             this.totalPriceLabel.Name = "totalPriceLabel";
             this.totalPriceLabel.Size = new System.Drawing.Size(107, 25);
             this.totalPriceLabel.TabIndex = 4;
@@ -145,10 +146,10 @@ namespace Sandwich_Shop
             // 
             // orderButton
             // 
-            this.orderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderButton.Location = new System.Drawing.Point(455, 561);
+            this.orderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderButton.Location = new System.Drawing.Point(726, 564);
             this.orderButton.Name = "orderButton";
-            this.orderButton.Size = new System.Drawing.Size(79, 31);
+            this.orderButton.Size = new System.Drawing.Size(101, 42);
             this.orderButton.TabIndex = 6;
             this.orderButton.Text = "Order";
             this.orderButton.UseVisualStyleBackColor = true;
@@ -173,12 +174,24 @@ namespace Sandwich_Shop
             this.listBoxGroupBox.TabStop = false;
             this.listBoxGroupBox.Text = "Your Order";
             // 
+            // maxIngredientLabel
+            // 
+            this.maxIngredientLabel.AutoSize = true;
+            this.maxIngredientLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxIngredientLabel.Location = new System.Drawing.Point(28, 512);
+            this.maxIngredientLabel.Name = "maxIngredientLabel";
+            this.maxIngredientLabel.Size = new System.Drawing.Size(207, 24);
+            this.maxIngredientLabel.TabIndex = 9;
+            this.maxIngredientLabel.Text = "You can choose Up to: ";
+            this.maxIngredientLabel.Visible = false;
+            // 
             // mainShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(848, 620);
+            this.Controls.Add(this.maxIngredientLabel);
             this.Controls.Add(this.listBoxGroupBox);
             this.Controls.Add(this.orderButton);
             this.Controls.Add(this.totalPriceLabel);
@@ -215,6 +228,7 @@ namespace Sandwich_Shop
         private System.Windows.Forms.Button orderButton;
         private System.Windows.Forms.ListBox displayOrderListBox;
         private System.Windows.Forms.GroupBox listBoxGroupBox;
+        private System.Windows.Forms.Label maxIngredientLabel;
     }
 }
 

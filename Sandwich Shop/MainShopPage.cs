@@ -16,6 +16,7 @@ namespace Sandwich_Shop
     public partial class mainShopForm : Form {
 
         private double totalPrice;
+        private int remainingMaxIngredients = 0;
 
         SandwichBread Bread = new SandwichBread();
         SandwichIngredients Ingredients = new SandwichIngredients();
@@ -34,26 +35,13 @@ namespace Sandwich_Shop
         }
 
 
-        private void updateTotalPrice(double price) { 
-            
-            
+        private void updateTotalPrice(double price) {
 
-            totalPriceLabel.Text = "$ " + price.ToString(); }
 
-        private void checkIngredientCheckBox_CheckedChanged(object sender, EventArgs e) {
-
-            CheckBox CheckBox = ( sender as CheckBox );
-            SandwichIngredients userIngredients = CheckBox.Tag as SandwichIngredients;
-
-            //If ingredient is checked we display the price without clicking the order button
-            if (CheckBox.Checked) {
-                MessageBox.Show("Ingredients CHECK: " + userIngredients.ingredientsName);
-                
-                // ADD   TotalPrice
-            }
-
-           
+            totalPrice += price;
+            totalPriceLabel.Text = "$ " + totalPrice.ToString(); 
         }
+
 
         private void checkBreadRadioButton_CheckedChanged(object sender, EventArgs e) {
 
@@ -65,14 +53,45 @@ namespace Sandwich_Shop
 
 
                 updateTotalPrice(Convert.ToDouble(Bread.breadPrice));
+
+                remainingMaxIngredients =  Convert.ToInt32(Bread.maxIngredients);
+                maxIngredientLabel.Visible = true;
+                maxIngredientLabel.Text = $"You can choose Up to: {remainingMaxIngredients}";
             }
-
-
-
         }
 
+        private void checkIngredientCheckBox_CheckedChanged(object sender, EventArgs e) {
 
+            CheckBox CheckBox = ( sender as CheckBox );
+            SandwichIngredients userIngredients = CheckBox.Tag as SandwichIngredients;
+            SandwichBread Bread = new SandwichBread();
 
+            if (CheckBox.Checked == false) {
+                MessageBox.Show("Ingredients UNCHECKED: " + userIngredients.ingredientsName);
+
+                totalPrice -= Convert.ToDouble(userIngredients.ingredientPrice);
+                remainingMaxIngredients += 1;
+                updateTotalPrice(Convert.ToDouble(userIngredients.ingredientPrice));
+            }
+
+            else {
+
+                if (remainingMaxIngredients != Convert.ToInt32(Bread.maxIngredients)) {
+
+                    MessageBox.Show("Ingredients CHECKED: " + userIngredients.ingredientsName);
+                    totalPrice += Convert.ToDouble(userIngredients.ingredientPrice);
+                    remainingMaxIngredients -= 1;
+                    updateTotalPrice(Convert.ToDouble(userIngredients.ingredientPrice));
+                }
+
+                else {
+                    MessageBox.Show("You have reached the Maximum amount of Ingredients.");
+                }
+
+            }
+
+           
+        }
 
 
         // This Functions, CREATES the Bread Type RadioButton. Put it gets the values from the Settings file, which contains the things that the user enters
@@ -84,7 +103,7 @@ namespace Sandwich_Shop
             {
                 var breadRadioButton = new RadioButton();
 
-                breadRadioButton.Text = $"{entry.breadName} € {entry.breadPrice}";
+                breadRadioButton.Text = $"{entry.breadName}   € {entry.breadPrice}   Up to:  {entry.maxIngredients}";
                 breadRadioButton.Tag = entry;
                 breadRadioButton.Checked = false;
                 breadRadioButton.AutoSize = true;
@@ -104,7 +123,7 @@ namespace Sandwich_Shop
                 var ingredientCheckBox = new CheckBox();
                 
                 ingredientCheckBox.Name = $"{entry.ingredientsName}";
-                ingredientCheckBox.Text = $"{entry.ingredientsName}";
+                ingredientCheckBox.Text = $"{entry.ingredientsName}  €  {entry.ingredientPrice}";
                 ingredientCheckBox.Tag = entry;
                 ingredientCheckBox.Checked = false;
                 ingredientCheckBox.AutoSize = true;

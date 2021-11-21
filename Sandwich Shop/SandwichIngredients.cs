@@ -11,24 +11,18 @@ namespace Sandwich_Shop
 {
     public class SandwichIngredients {
 
-        public double extraIngredient = 0.50;
-        public string ingredientsSelected = null;   // Store the Ingredients that the user selected
+        
+        public string ingredientsSelected;   // Store the Ingredients that the user selected
         
         public string ingredientsName { get; set; }
+        public string ingredientPrice { get; set; }       // Store the Ingredients price
 
         public SandwichIngredients() { }
 
-        public SandwichIngredients(string ingredient_Name) { ingredientsName = ingredient_Name; }
-
-
-
-        //public string propertieType = "CheckBox";
-        //public List<string> defaultIngredients = new List<string>() 
-        //{ 
-        //    "Turkey", "Bacon", "Ham", "Cheese", "Lettuce", "Tomato", "Mayo", "Cucumber", "Egg", "Bacon"
-        //};
-
-
+        public SandwichIngredients(string ingredient_Name, string ingredient_Price) { 
+            ingredientsName = ingredient_Name;
+            ingredientPrice = ingredient_Price;
+        }
 
 
 

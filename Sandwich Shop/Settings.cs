@@ -35,9 +35,9 @@ namespace Sandwich_Shop
 
         private void saveBreadButton_Click(object sender, EventArgs e) {
 
-            Bread.Add(new SandwichBread(breadTypeTextBox.Text, breadPriceTextBox.Text));
+            //Bread.Add(new SandwichBread(breadTypeTextBox.Text, breadPriceTextBox.Text));
 
-            breadDataGridView.DataSource = new BindingList<SandwichBread>(Bread);
+            //breadDataGridView.DataSource = new BindingList<SandwichBread>(Bread);
 
             saveBread();
             MessageBox.Show("Successfully saved the Bread and the price.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -46,10 +46,10 @@ namespace Sandwich_Shop
 
         private void saveIngredientButton_Click(object sender, EventArgs e) {
 
-            ingredients.Add(new SandwichIngredients(ingredientNameTextBox.Text));
+            //ingredients.Add(new SandwichIngredients(ingredientNameTextBox.Text));
 
 
-            ingredientDataGridView.DataSource = new BindingList<SandwichIngredients>(ingredients);
+            //ingredientDataGridView.DataSource = new BindingList<SandwichIngredients>(ingredients);
 
             saveIngredients();
             MessageBox.Show("Successfully saved the Ingredients.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -60,7 +60,7 @@ namespace Sandwich_Shop
 
             var sirializedBread = JsonConvert.SerializeObject(Bread);
             File.WriteAllText(breadJsonFile, sirializedBread, Encoding.UTF8);
-                          //The file <name>  what we want to save
+                          //The file <name> , what we want to save
         }
 
         // Saves the Ingredients that the user Entered
@@ -68,7 +68,7 @@ namespace Sandwich_Shop
 
             var sirializedIngredients = JsonConvert.SerializeObject(ingredients);
             File.WriteAllText(ingredientJsonFile, sirializedIngredients, Encoding.UTF8);
-                           // The file <name>     what we want to save
+                           // The file <name>   ,  what we want to save
         }
 
 

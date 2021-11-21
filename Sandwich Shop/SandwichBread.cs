@@ -11,33 +11,19 @@ namespace Sandwich_Shop
 {
     public class SandwichBread {
 
-        public string propertieType = "RadioButton";
-
         public string breadName { get; set; }
         public string breadPrice { get; set; }  // i will use the Convert.ToDouble to convert the string to double, so i can make the calcu.
-
+        public string maxIngredients { get; set; }  // Up to how many ingredients can the user add to his/her Samndwich
 
         public SandwichBread() { }
 
-        public SandwichBread(string bread_Name, string bread_Price) {
+        public SandwichBread(string bread_Name, string bread_Price, string max_Ingredients) {
 
             breadName = bread_Name;
             breadPrice = bread_Price;
+            maxIngredients = max_Ingredients;
         }
 
-
-        /*      DELETE IT 
-        public List<string> defaultBreadTypes = new List<string>()
-        {
-            "Baguette", "Breadstick", "Brioche", "Ciabatta"
-        };
-
-        public List<double> breadPrice = new List<double>()
-        { 
-            3.00, 2.80, 3.00, 2.50
-        
-        };
-        */
 
         
     }
