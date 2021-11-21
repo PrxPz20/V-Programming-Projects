@@ -13,26 +13,28 @@ using Newtonsoft.Json;
 
 namespace Sandwich_Shop
 {
-    public partial class LoginPage : Form
-    {
-
-        public List<SandwichLogin> Login = new List<SandwichLogin>();
+    public partial class LoginPage : Form {
 
 
-        public LoginPage() {
-            InitializeComponent();
-            Login.Add(new SandwichLogin("Admin", "Admin"));
-        }
+        public UserData UserData = new UserData();
+        //public SandwichLogin SandwichLogin = new SandwichLogin();
+        //public mainShopForm mainShop = new mainShopForm();
+
+        public LoginPage() { InitializeComponent(); }
 
         private void loginButton_Click(object sender, EventArgs e) {
 
-            if (userNameTextBox.Text == "Admin")
+            
+        
+            if ( (userNameTextBox.Text == UserData.userName) && (passwordTextBox.Text == UserData.Password) )
                 MessageBox.Show("Successfully Login ");
             else
                 MessageBox.Show("Try again");
 
 
         }
+
+
 
 
     }

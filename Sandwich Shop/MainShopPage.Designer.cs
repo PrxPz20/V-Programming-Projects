@@ -40,9 +40,12 @@ namespace Sandwich_Shop
             this.settingsStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderButton = new System.Windows.Forms.Button();
+            this.displayOrderListBox = new System.Windows.Forms.ListBox();
+            this.listBoxGroupBox = new System.Windows.Forms.GroupBox();
             this.breadGroupBox.SuspendLayout();
             this.ingredientsGroupBox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.listBoxGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // shopNameLabel
@@ -59,9 +62,9 @@ namespace Sandwich_Shop
             // 
             this.breadGroupBox.Controls.Add(this.breadFlowLayoutPanel);
             this.breadGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.breadGroupBox.Location = new System.Drawing.Point(18, 123);
+            this.breadGroupBox.Location = new System.Drawing.Point(18, 93);
             this.breadGroupBox.Name = "breadGroupBox";
-            this.breadGroupBox.Size = new System.Drawing.Size(328, 205);
+            this.breadGroupBox.Size = new System.Drawing.Size(387, 205);
             this.breadGroupBox.TabIndex = 1;
             this.breadGroupBox.TabStop = false;
             this.breadGroupBox.Text = "Choice you bread type";
@@ -72,14 +75,14 @@ namespace Sandwich_Shop
             this.breadFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.breadFlowLayoutPanel.Location = new System.Drawing.Point(3, 22);
             this.breadFlowLayoutPanel.Name = "breadFlowLayoutPanel";
-            this.breadFlowLayoutPanel.Size = new System.Drawing.Size(322, 180);
+            this.breadFlowLayoutPanel.Size = new System.Drawing.Size(381, 180);
             this.breadFlowLayoutPanel.TabIndex = 0;
             // 
             // ingredientsGroupBox
             // 
             this.ingredientsGroupBox.Controls.Add(this.ingredientsFlowLayoutPanel);
             this.ingredientsGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ingredientsGroupBox.Location = new System.Drawing.Point(376, 123);
+            this.ingredientsGroupBox.Location = new System.Drawing.Point(18, 304);
             this.ingredientsGroupBox.Name = "ingredientsGroupBox";
             this.ingredientsGroupBox.Size = new System.Drawing.Size(387, 205);
             this.ingredientsGroupBox.TabIndex = 2;
@@ -99,7 +102,7 @@ namespace Sandwich_Shop
             // 
             this.priceTextLabel.AutoSize = true;
             this.priceTextLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceTextLabel.Location = new System.Drawing.Point(31, 447);
+            this.priceTextLabel.Location = new System.Drawing.Point(16, 547);
             this.priceTextLabel.Name = "priceTextLabel";
             this.priceTextLabel.Size = new System.Drawing.Size(66, 25);
             this.priceTextLabel.TabIndex = 3;
@@ -109,7 +112,7 @@ namespace Sandwich_Shop
             // 
             this.totalPriceLabel.AutoSize = true;
             this.totalPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalPriceLabel.Location = new System.Drawing.Point(103, 447);
+            this.totalPriceLabel.Location = new System.Drawing.Point(88, 547);
             this.totalPriceLabel.Name = "totalPriceLabel";
             this.totalPriceLabel.Size = new System.Drawing.Size(107, 25);
             this.totalPriceLabel.TabIndex = 4;
@@ -122,7 +125,7 @@ namespace Sandwich_Shop
             this.aboutStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(848, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -143,19 +146,40 @@ namespace Sandwich_Shop
             // orderButton
             // 
             this.orderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderButton.Location = new System.Drawing.Point(267, 446);
+            this.orderButton.Location = new System.Drawing.Point(455, 561);
             this.orderButton.Name = "orderButton";
             this.orderButton.Size = new System.Drawing.Size(79, 31);
             this.orderButton.TabIndex = 6;
             this.orderButton.Text = "Order";
             this.orderButton.UseVisualStyleBackColor = true;
             // 
+            // displayOrderListBox
+            // 
+            this.displayOrderListBox.FormattingEnabled = true;
+            this.displayOrderListBox.ItemHeight = 18;
+            this.displayOrderListBox.Location = new System.Drawing.Point(6, 19);
+            this.displayOrderListBox.Name = "displayOrderListBox";
+            this.displayOrderListBox.Size = new System.Drawing.Size(389, 184);
+            this.displayOrderListBox.TabIndex = 7;
+            // 
+            // listBoxGroupBox
+            // 
+            this.listBoxGroupBox.Controls.Add(this.displayOrderListBox);
+            this.listBoxGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxGroupBox.Location = new System.Drawing.Point(411, 93);
+            this.listBoxGroupBox.Name = "listBoxGroupBox";
+            this.listBoxGroupBox.Size = new System.Drawing.Size(401, 205);
+            this.listBoxGroupBox.TabIndex = 8;
+            this.listBoxGroupBox.TabStop = false;
+            this.listBoxGroupBox.Text = "Your Order";
+            // 
             // mainShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 518);
+            this.ClientSize = new System.Drawing.Size(848, 620);
+            this.Controls.Add(this.listBoxGroupBox);
             this.Controls.Add(this.orderButton);
             this.Controls.Add(this.totalPriceLabel);
             this.Controls.Add(this.priceTextLabel);
@@ -170,6 +194,7 @@ namespace Sandwich_Shop
             this.ingredientsGroupBox.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.listBoxGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,6 +213,8 @@ namespace Sandwich_Shop
         private System.Windows.Forms.ToolStripMenuItem settingsStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutStripMenuItem;
         private System.Windows.Forms.Button orderButton;
+        private System.Windows.Forms.ListBox displayOrderListBox;
+        private System.Windows.Forms.GroupBox listBoxGroupBox;
     }
 }
 

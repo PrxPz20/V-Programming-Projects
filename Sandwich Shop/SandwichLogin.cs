@@ -10,54 +10,49 @@ using Newtonsoft.Json;
 namespace Sandwich_Shop {
 
     public class SandwichLogin {
-    
-        public string userName { get; set; }
-        public string passWord { get; set; }
 
-        private string userLoginDataFile = "LoginData.json";
-
-        public SandwichLogin() {
-        
-        }
-
-        public SandwichLogin(string UserName, string Password) {
-
-            userName = UserName;
-            passWord = Password;
-
-            saveDefaultLoginData();
-        }
-
-
-        private void saveDefaultLoginData() {
-
-            var sirializedUserName = JsonConvert.SerializeObject(userName);
-            var sirializedPassword = JsonConvert.SerializeObject(passWord);
-
-            File.WriteAllText(userLoginDataFile, sirializedUserName, Encoding.UTF8);
-            File.WriteAllText(userLoginDataFile, sirializedPassword, Encoding.UTF8);
-            
-            
-        }
-
-        private string LoadDefaultLoginData() {
-
-            if (File.Exists(userLoginDataFile))
-            {
-
-
-
-
-                return "";
-            }
-            else
-                return "";
-
-
-
-        }
+        [JsonProperty("UserData")]
+        public UserData UserData { get; set; }
 
 
 
     }
+
+
+    public class UserData : SandwichLogin {
+
+        [JsonProperty("userName")]
+        public string userName;
+
+
+        [JsonProperty("Password")]
+        public string Password;
+
+        public UserData() {
+
+            userName = "Admin";
+            Password = "Admin";
+        }
+
+
+    }
+
+
+    /*
+    public class FileName {
+        [JsonProperty("userNameLoginDataFile")]
+        public string userNameLoginDataFile { get; set; }
+
+        [JsonProperty("passwordLoginDataFile")]
+        public string passwordLoginDataFile { get; set; }
+
+
+        public FileName() {
+            userNameLoginDataFile = "Login_UserNameData.json";
+            passwordLoginDataFile = "Login_PasswordData.json";
+        }
+
+    }
+    */
+
 }
