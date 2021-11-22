@@ -43,6 +43,7 @@ namespace Sandwich_Shop
             this.displayOrderListBox = new System.Windows.Forms.ListBox();
             this.listBoxGroupBox = new System.Windows.Forms.GroupBox();
             this.maxIngredientLabel = new System.Windows.Forms.Label();
+            this.addOrderToListBoxButton = new System.Windows.Forms.Button();
             this.breadGroupBox.SuspendLayout();
             this.ingredientsGroupBox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -82,6 +83,7 @@ namespace Sandwich_Shop
             // ingredientsGroupBox
             // 
             this.ingredientsGroupBox.Controls.Add(this.ingredientsFlowLayoutPanel);
+            this.ingredientsGroupBox.Enabled = false;
             this.ingredientsGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ingredientsGroupBox.Location = new System.Drawing.Point(18, 304);
             this.ingredientsGroupBox.Name = "ingredientsGroupBox";
@@ -146,6 +148,7 @@ namespace Sandwich_Shop
             // 
             // orderButton
             // 
+            this.orderButton.Enabled = false;
             this.orderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orderButton.Location = new System.Drawing.Point(726, 564);
             this.orderButton.Name = "orderButton";
@@ -185,12 +188,24 @@ namespace Sandwich_Shop
             this.maxIngredientLabel.Text = "You can choose Up to: ";
             this.maxIngredientLabel.Visible = false;
             // 
+            // addOrderToListBoxButton
+            // 
+            this.addOrderToListBoxButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addOrderToListBoxButton.Location = new System.Drawing.Point(711, 304);
+            this.addOrderToListBoxButton.Name = "addOrderToListBoxButton";
+            this.addOrderToListBoxButton.Size = new System.Drawing.Size(101, 29);
+            this.addOrderToListBoxButton.TabIndex = 10;
+            this.addOrderToListBoxButton.Text = "Add Order";
+            this.addOrderToListBoxButton.UseVisualStyleBackColor = true;
+            this.addOrderToListBoxButton.Click += new System.EventHandler(this.addOrderToListBoxButton_Click);
+            // 
             // mainShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(848, 620);
+            this.Controls.Add(this.addOrderToListBoxButton);
             this.Controls.Add(this.maxIngredientLabel);
             this.Controls.Add(this.listBoxGroupBox);
             this.Controls.Add(this.orderButton);
@@ -229,6 +244,7 @@ namespace Sandwich_Shop
         private System.Windows.Forms.ListBox displayOrderListBox;
         private System.Windows.Forms.GroupBox listBoxGroupBox;
         private System.Windows.Forms.Label maxIngredientLabel;
+        private System.Windows.Forms.Button addOrderToListBoxButton;
     }
 }
 

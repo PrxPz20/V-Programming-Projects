@@ -16,7 +16,7 @@ namespace Sandwich_Shop
     public partial class mainShopForm : Form {
 
         private double totalPrice;
-        private int remainingMaxIngredients = 0;
+        private int remainingMaxIngredients = 0;    // How many Ingredients the user can add in to his/her Sandwich
 
         SandwichBread Bread = new SandwichBread();
         SandwichIngredients Ingredients = new SandwichIngredients();
@@ -35,10 +35,8 @@ namespace Sandwich_Shop
         }
 
 
-        private void updateTotalPrice(double price) {
+        private void updateTotalPrice() {
 
-
-            totalPrice += price;
             totalPriceLabel.Text = "$ " + totalPrice.ToString(); 
         }
 
@@ -48,17 +46,25 @@ namespace Sandwich_Shop
             RadioButton radioButton = ( sender as RadioButton );
             SandwichBread Bread = radioButton.Tag as SandwichBread;
 
+            if (radioButton.Checked == false) {
+                //MessageBox.Show($"Bread UNCHECK: { Bread.breadName }\nBread Price: {Bread.breadPrice} "); 
+                totalPrice -= Convert.ToDouble(Bread.breadPrice);
+            }
+
             if (radioButton.Checked) {
                 MessageBox.Show($"Bread CHECK: { Bread.breadName }\nBread Price: {Bread.breadPrice} ");
-
-
-                updateTotalPrice(Convert.ToDouble(Bread.breadPrice));
-
-                remainingMaxIngredients =  Convert.ToInt32(Bread.maxIngredients);
                 maxIngredientLabel.Visible = true;
+                ingredientsGroupBox.Enabled = true;
+                
+                totalPrice += Convert.ToDouble(Bread.breadPrice);
+                remainingMaxIngredients =  Convert.ToInt32(Bread.maxIngredients);
+
                 maxIngredientLabel.Text = $"You can choose Up to: {remainingMaxIngredients}";
             }
+
+            updateTotalPrice();
         }
+
 
         private void checkIngredientCheckBox_CheckedChanged(object sender, EventArgs e) {
 
@@ -67,30 +73,63 @@ namespace Sandwich_Shop
             SandwichBread Bread = new SandwichBread();
 
             if (CheckBox.Checked == false) {
-                MessageBox.Show("Ingredients UNCHECKED: " + userIngredients.ingredientsName);
+                //MessageBox.Show("Ingredients UNCHECKED: " + userIngredients.ingredientsName);
 
                 totalPrice -= Convert.ToDouble(userIngredients.ingredientPrice);
                 remainingMaxIngredients += 1;
-                updateTotalPrice(Convert.ToDouble(userIngredients.ingredientPrice));
+
+                maxIngredientLabel.Text = $"You can choose Up to: {remainingMaxIngredients}";
+                updateTotalPrice();
             }
 
             else {
 
                 if (remainingMaxIngredients != Convert.ToInt32(Bread.maxIngredients)) {
+                    orderButton.Enabled = true;
 
-                    MessageBox.Show("Ingredients CHECKED: " + userIngredients.ingredientsName);
+                    //MessageBox.Show("Ingredients CHECKED: " + userIngredients.ingredientsName);
                     totalPrice += Convert.ToDouble(userIngredients.ingredientPrice);
                     remainingMaxIngredients -= 1;
-                    updateTotalPrice(Convert.ToDouble(userIngredients.ingredientPrice));
+
+                    if (remainingMaxIngredients < 0)
+                        maxIngredientLabel.Text = $"You can choose Up to: 0";
+                    else
+                    maxIngredientLabel.Text = $"You can choose Up to: {remainingMaxIngredients}";
+
+                    updateTotalPrice();
                 }
 
-                else {
+                else
                     MessageBox.Show("You have reached the Maximum amount of Ingredients.");
-                }
 
             }
 
+            // If the max ingredients == 0, it will Disable the other Checkboxs
+            if (remainingMaxIngredients == 0) {
+                foreach (CheckBox check in ingredientsFlowLayoutPanel.Controls) {
+
+                    if (check.Checked == true)
+                        continue;
+                    else
+                        check.Enabled = false;
+                }
+            }
+            else {  // If the max ingredients goes above 0, it will Enable the Checkboxs
+
+                foreach (CheckBox check in ingredientsFlowLayoutPanel.Controls) {
+
+                    if (check.Checked == true)
+                        continue;
+                    else
+                        check.Enabled = true;
+                }
+            }
            
+        }
+
+        
+        private void addOrderToListBoxButton_Click(object sender, EventArgs e) {
+            //displayOrderListBox.Items.Add();
         }
 
 
@@ -135,6 +174,8 @@ namespace Sandwich_Shop
         }
 
 
+
+
         private void settingsStripMenuItem_Click(object sender, EventArgs e) {
             
             Settings.ShowDialog();
@@ -143,6 +184,9 @@ namespace Sandwich_Shop
         }
 
         private void aboutStripMenuItem_Click(object sender, EventArgs e) { About.ShowDialog(); }
+
+
+
 
     }
 }
