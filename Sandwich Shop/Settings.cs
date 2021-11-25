@@ -35,21 +35,12 @@ namespace Sandwich_Shop
 
         private void saveBreadButton_Click(object sender, EventArgs e) {
 
-            //Bread.Add(new SandwichBread(breadTypeTextBox.Text, breadPriceTextBox.Text));
-
-            //breadDataGridView.DataSource = new BindingList<SandwichBread>(Bread);
-
             saveBread();
             MessageBox.Show("Successfully saved the Bread and the price.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
         private void saveIngredientButton_Click(object sender, EventArgs e) {
-
-            //ingredients.Add(new SandwichIngredients(ingredientNameTextBox.Text));
-
-
-            //ingredientDataGridView.DataSource = new BindingList<SandwichIngredients>(ingredients);
 
             saveIngredients();
             MessageBox.Show("Successfully saved the Ingredients.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);

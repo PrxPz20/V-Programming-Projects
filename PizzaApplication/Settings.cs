@@ -13,29 +13,102 @@ namespace PizzaApplication
 {
     public partial class Settings : Form {
 
-        RadioButton newPizzaSize = new RadioButton();
         public List<PizzaSize> pizzaSizes = new List<PizzaSize>();
+        public List<Ingredients> ingredients = new List<Ingredients>();
+
+        private string ingredientJsonFile = "savedIngredientFile.json";
+        private string pizzaSizeJsonFile = "savedPizzaSizeFile.json";
+
 
         public Settings() {
 
             InitializeComponent();
-        }
 
-        private void Settings_Load(object sender, EventArgs e) {
+            LoadPizzaSize();
+            LoadIngredients();
 
-            pizzaSizes.Add(new PizzaSize("Small", 5, 2));
-            pizzaSizes.Add(new PizzaSize("Medium", 7.5, 3));
-            pizzaSizes.Add(new PizzaSize("Large", 12, 4));
+            pizzaSizeDataGridView.DataSource = new BindingList<PizzaSize>(pizzaSizes);
+            ingredientsDataGridView.DataSource = new BindingList<Ingredients>(ingredients);
 
-            pizzasizeDataGridView.DataSource = new BindingList<PizzaSize>(pizzaSizes);
         }
 
         private void saveSizeBuitton_Click(object sender, EventArgs e) {
-            
-            string pizzaSizesString = JsonConvert.SerializeObject(pizzaSizes);
 
-            File.WriteAllText("PizzaSize.json", pizzaSizesString);
-            
+            savePizzaSize();
+            MessageBox.Show("Successfully saved the Data.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
+
+        private void saveIngredientsButton_Click(object sender, EventArgs e) {
+
+            saveIngredients();
+            MessageBox.Show("Successfully saved the Ingredients.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        
+        private void savePizzaSize() {  // CHANGE NAME
+
+            var sirializedPizzaSize = JsonConvert.SerializeObject(pizzaSizes);
+            File.WriteAllText(pizzaSizeJsonFile, sirializedPizzaSize, Encoding.UTF8);
+            //The file <name> , what we want to save
+        }
+
+
+        // Saves the Ingredients that the user Entered
+        private void saveIngredients()  { // CHANGE NAME
+
+            var sirializedIngredients = JsonConvert.SerializeObject(ingredients);
+            File.WriteAllText(ingredientJsonFile, sirializedIngredients, Encoding.UTF8);
+            // The file <name>   ,  what we want to save
+        }
+
+        private void LoadPizzaSize()  {// CHANGE NAME
+
+            if (File.Exists(pizzaSizeJsonFile)) {
+
+                var pizzaSizeContent = File.ReadAllText(pizzaSizeJsonFile, Encoding.UTF8);
+                pizzaSizes = JsonConvert.DeserializeObject<List<PizzaSize>>(pizzaSizeContent);
+            }
+            else
+                pizzaSizes.Clear();
+            pizzaSizeDataGridView.DataSource = new BindingList<PizzaSize>(pizzaSizes);
+        }
+
+        private void LoadIngredients() {
+
+            if (File.Exists(ingredientJsonFile)) {
+
+                var ingredientContent = File.ReadAllText(ingredientJsonFile, Encoding.UTF8);
+                ingredients = JsonConvert.DeserializeObject<List<Ingredients>>(ingredientContent);
+            }
+            else
+                ingredients.Clear();
+
+            ingredientsDataGridView.DataSource = new BindingList<Ingredients>(ingredients);
+        }
+
+
+        private void resetSizebutton_Click(object sender, EventArgs e) {
+
+            LoadPizzaSize();
+            pizzaSizeDataGridView.DataSource = new BindingList<PizzaSize>(pizzaSizes);
+        }
+
+        private void resetIngredientsButton_Click(object sender, EventArgs e) {
+
+            LoadIngredients();
+            ingredientsDataGridView.DataSource = new BindingList<Ingredients>(ingredients);
+        }
+
+
+        private void Settings_Leave(object sender, EventArgs e) {
+
+            LoadPizzaSize();
+            LoadIngredients();
+
+            pizzaSizeDataGridView.DataSource = new BindingList<PizzaSize>(pizzaSizes);
+            ingredientsDataGridView.DataSource = new BindingList<Ingredients>(ingredients);
+        }
+    
     }
 }
