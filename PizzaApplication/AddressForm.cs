@@ -16,8 +16,12 @@ namespace PizzaApplication
 
         private void setaddressButton_Click(object sender, EventArgs e) {
 
-            userLocationAddress = locationadressTextBox.Text;
-            this.Close();
+            if (locationadressTextBox.Text.Equals(""))
+                MessageBox.Show($"Location is not valid", "Location Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else{
+                userLocationAddress = locationadressTextBox.Text;
+                this.Close();
+            }
         }
 
     }

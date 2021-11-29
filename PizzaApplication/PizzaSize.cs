@@ -11,20 +11,7 @@ namespace PizzaApplication {
         public string pizzaPrice { get; set; }
         public string FreeIngredient { get; set; }
 
-        public string propertieNamePizzaSize = "RadioButton";
-
         public PizzaSize() { }
-
-        public PizzaSize(string name, string price, string freeIngredientCount) {
-            pizzaName = name;
-            pizzaPrice = price;
-            FreeIngredient = freeIngredientCount;
-        }
-
-
-
-
-
 
 
 

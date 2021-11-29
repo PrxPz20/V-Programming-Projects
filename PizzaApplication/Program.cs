@@ -16,7 +16,12 @@ namespace PizzaApplication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+
+            SplashScreen splashScreen = new SplashScreen();
+            splashScreen.ShowDialog();
+
+            Application.Run(new LoginPage());
+            //Application.Run(new MainForm());
         }
     }
 }

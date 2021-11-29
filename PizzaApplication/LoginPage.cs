@@ -10,34 +10,42 @@ using System.Windows.Forms;
 
 namespace PizzaApplication
 {
-    public partial class LoginPage : Form
-    {
+    public partial class LoginPage : Form {
+
+        MainForm MainForm = new MainForm();
+
+
         public LoginPage() {
             InitializeComponent();
         }
 
-        private bool successfullyLogin { get; set; }
-        private string userName { get; set; }
-        private string passWord { get; set; }
-
-        public string getUserName() { return userName; }
-        public bool getSuccessfullyLogin() { return successfullyLogin; }
 
         private void loginButton_Click(object sender, EventArgs e) {
 
-            userName = userNameTextBox.Text;
-            passWord = passwordTextBox.Text;
 
-            if (userName == "Admin" && passWord == "Admin123") {
-                successfullyLogin = true;
+            if (userNameTextBox.Text == "Admin" && passwordTextBox.Text == "Admin") {
+                MainForm.userAccessLevel("Manager");    // If the user want to sign in as a Manager. Settings Item at the top Menu Bar will be Visible for him.
+
+                userNameTextBox.Clear();
+                passwordTextBox.Clear();
+
+                MainForm.ShowDialog();
                 
             }
-                
             else
                 MessageBox.Show($"Please Enter a valid username or password, try again please ", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 
+        private void userButton_Click(object sender, EventArgs e) {
+            MainForm.userAccessLevel("User");   // If the user want to just Order, it will sign in like a User. And Settings Item at the top Menu Bar will be not Visible for the user
+
+            userNameTextBox.Clear();
+            passwordTextBox.Clear();
+
+            MainForm.ShowDialog();
+            
+        }
 
     }
 }
