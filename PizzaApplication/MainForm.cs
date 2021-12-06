@@ -38,8 +38,6 @@ namespace PizzaApplication {
                 settingsStripMenuItem.Visible = true;
             else if (access == "User")
                 settingsStripMenuItem.Visible = false;
-            
-
         }
 
         private string OrderSummary() { return $"Pizza Size: {pizzaSizeSelected}\nIngredients: {saveUsersIngredients}\nLocation: {AddressForm.userLocationAddress}\nTotal Price: € {totalPizzaPrice}";  }
@@ -61,10 +59,6 @@ namespace PizzaApplication {
 
             RadioButton radioButton = (sender as RadioButton);
             PizzaSize pizzaSize = radioButton.Tag as PizzaSize;
-
-            //if (radioButton.Checked == false) {
-                //totalPizzaPrice -= Convert.ToDouble(pizzaSize.pizzaPrice);
-            //}
 
             if (radioButton.Checked) {
 

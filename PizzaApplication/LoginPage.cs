@@ -29,8 +29,11 @@ namespace PizzaApplication
                 userNameTextBox.Clear();
                 passwordTextBox.Clear();
 
+                Hide();
                 MainForm.ShowDialog();
-                
+                Show();
+
+                userNameTextBox.Focus();
             }
             else
                 MessageBox.Show($"Please Enter a valid username or password, try again please ", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
