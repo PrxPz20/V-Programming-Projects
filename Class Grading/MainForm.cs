@@ -21,7 +21,7 @@ namespace Class_Grading
         public MainForm() { 
             InitializeComponent();
 
-            
+            studentGradesDataGridView.DataSource = new BindingList<StudentGrade>();
         }
 
 
@@ -30,7 +30,10 @@ namespace Class_Grading
             UpdateGradeInfo();
         }
 
-        private void 
+        private void gradeWeightNumericUpDown_ValueChanged(object sender, EventArgs e) {
+
+            UpdateGradeInfo();
+        }        
 
     
         private void UpdateGradeInfo() {
@@ -50,8 +53,8 @@ namespace Class_Grading
 
 
         }
-    
-    
+
+
     }
 }
 

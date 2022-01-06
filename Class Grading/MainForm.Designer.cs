@@ -29,9 +29,9 @@ namespace Class_Grading
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.greadWeightsGroupBox = new System.Windows.Forms.GroupBox();
             this.greadWeightsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -106,6 +106,7 @@ namespace Class_Grading
             this.attendnceNumericUpDown.Name = "attendnceNumericUpDown";
             this.attendnceNumericUpDown.Size = new System.Drawing.Size(79, 26);
             this.attendnceNumericUpDown.TabIndex = 3;
+            this.attendnceNumericUpDown.ValueChanged += new System.EventHandler(this.gradeWeightNumericUpDown_ValueChanged);
             // 
             // label2
             // 
@@ -123,6 +124,7 @@ namespace Class_Grading
             this.homeworkNumericUpDown.Name = "homeworkNumericUpDown";
             this.homeworkNumericUpDown.Size = new System.Drawing.Size(79, 26);
             this.homeworkNumericUpDown.TabIndex = 4;
+            this.homeworkNumericUpDown.ValueChanged += new System.EventHandler(this.gradeWeightNumericUpDown_ValueChanged);
             // 
             // label3
             // 
@@ -139,6 +141,7 @@ namespace Class_Grading
             this.midtermNumericUpDown.Name = "midtermNumericUpDown";
             this.midtermNumericUpDown.Size = new System.Drawing.Size(79, 26);
             this.midtermNumericUpDown.TabIndex = 5;
+            this.midtermNumericUpDown.ValueChanged += new System.EventHandler(this.gradeWeightNumericUpDown_ValueChanged);
             // 
             // label4
             // 
@@ -155,6 +158,7 @@ namespace Class_Grading
             this.finalNumericUpDown.Name = "finalNumericUpDown";
             this.finalNumericUpDown.Size = new System.Drawing.Size(79, 26);
             this.finalNumericUpDown.TabIndex = 6;
+            this.finalNumericUpDown.ValueChanged += new System.EventHandler(this.gradeWeightNumericUpDown_ValueChanged);
             // 
             // dataGridGroupBox
             // 
@@ -167,34 +171,34 @@ namespace Class_Grading
             // 
             // studentGradesDataGridView
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.studentGradesDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.studentGradesDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.studentGradesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.studentGradesDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.studentGradesDataGridView.DefaultCellStyle = dataGridViewCellStyle14;
             this.studentGradesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.studentGradesDataGridView.Location = new System.Drawing.Point(3, 16);
             this.studentGradesDataGridView.Name = "studentGradesDataGridView";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.studentGradesDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.studentGradesDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.studentGradesDataGridView.Size = new System.Drawing.Size(712, 429);
             this.studentGradesDataGridView.TabIndex = 0;
             this.studentGradesDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentGradesDataGridView_CellValueChanged);
