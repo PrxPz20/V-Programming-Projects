@@ -8,51 +8,58 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using Newtonsoft.Json;
 
 namespace Class_Grading
 {
     public partial class MainForm : Form {
 
-        public List<StudentClass> studentClasses = new List<StudentClass>();
-        const string STUDENT_DATA_FILE = "StudentDataFile.json";
+        private List<StudentGrade> studentGrades = new List<StudentGrade>();
+        private const double MinimumPassGrade = 60;
 
+
+        
         public MainForm() { 
             InitializeComponent();
 
-            saveStudentsData();
-            LoadStudentsData();
-            studentInfoDataGridView.Columns[4].ReadOnly = true; // the user can not edit Final the Column
+            
         }
 
 
-        public void saveStudentsData() {
+        private void studentGradesDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e) {
 
-            var sirializeStudent = JsonConvert.SerializeObject(studentClasses);
-            File.WriteAllText(STUDENT_DATA_FILE, sirializeStudent);
-
+            UpdateGradeInfo();
         }
 
-        public void LoadStudentsData() {
+        private void 
 
-            var studentContain = File.ReadAllText(STUDENT_DATA_FILE);
-            studentClasses = JsonConvert.DeserializeObject<List<StudentClass>>(studentContain);
+    
+        private void UpdateGradeInfo() {
 
-            studentInfoDataGridView.DataSource = new BindingList<StudentClass>(studentClasses);
+            var grades = studentGrades.Select(x => x.GetGrade((double)attendnceNumericUpDown.Value,
+                                                              (double)homeworkNumericUpDown.Value,
+                                                              (double)midtermNumericUpDown.Value,
+                                                              (double)finalNumericUpDown.Value))
+                                                              .ToList();
+
+            classAverageTextBox.Text = grades.Average().ToString("N2");
+
+            studentsCountTextBox.Text = grades.Count.ToString();
+
+            var passRate = grades.Count(x => x >= MinimumPassGrade) / (double)grades.Count;
+            passRateTextBox.Text = passRate.ToString("P2");
+
+
         }
-
-        private void studentInfoDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e) {
-
-            // [ (88 x 1) + (90 x 2) + (85 x 3) + (84 x 6) ] / (1 + 2 + 3 + 6) = 85.58
-            StudentClass student = new StudentClass();
-
-            student.Final = ( (student.Attendance * (double)attendnceNumericUpDown.Value) + 
-                              (student.Homework * (double)homeworkNumericUpDown.Value) + 
-                              (student.Midterm * (double)midtermNumericUpDown.Value) )  / (double)(attendnceNumericUpDown.Value + homeworkNumericUpDown.Value 
-                             + midtermNumericUpDown.Value);
-
-           
-        }
-
+    
+    
     }
 }
+
+/*
+ * ((student.Attendance * (double)attendnceNumericUpDown.Value) +
+ (student.Homework * (double)homeworkNumericUpDown.Value) +
+ (student.Midterm * (double)midtermNumericUpDown.Value)) / (double)(attendnceNumericUpDown.Value + homeworkNumericUpDown.Value
++ midtermNumericUpDown.Value)
+ * 
+ * 
+ * */

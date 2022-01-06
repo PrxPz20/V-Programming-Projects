@@ -29,9 +29,9 @@ namespace Class_Grading
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.greadWeightsGroupBox = new System.Windows.Forms.GroupBox();
             this.greadWeightsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,12 +43,14 @@ namespace Class_Grading
             this.label4 = new System.Windows.Forms.Label();
             this.finalNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.dataGridGroupBox = new System.Windows.Forms.GroupBox();
-            this.studentInfoDataGridView = new System.Windows.Forms.DataGridView();
+            this.studentGradesDataGridView = new System.Windows.Forms.DataGridView();
             this.statsGroupBox = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.studentsCountTextBox = new System.Windows.Forms.TextBox();
+            this.classAverageTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.passRateLabel = new System.Windows.Forms.Label();
+            this.passRateTextBox = new System.Windows.Forms.TextBox();
             this.greadWeightsGroupBox.SuspendLayout();
             this.greadWeightsFlowLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.attendnceNumericUpDown)).BeginInit();
@@ -56,7 +58,7 @@ namespace Class_Grading
             ((System.ComponentModel.ISupportInitialize)(this.midtermNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalNumericUpDown)).BeginInit();
             this.dataGridGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.studentInfoDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentGradesDataGridView)).BeginInit();
             this.statsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +68,7 @@ namespace Class_Grading
             this.greadWeightsGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.greadWeightsGroupBox.Location = new System.Drawing.Point(12, 12);
             this.greadWeightsGroupBox.Name = "greadWeightsGroupBox";
-            this.greadWeightsGroupBox.Size = new System.Drawing.Size(689, 95);
+            this.greadWeightsGroupBox.Size = new System.Drawing.Size(721, 95);
             this.greadWeightsGroupBox.TabIndex = 0;
             this.greadWeightsGroupBox.TabStop = false;
             this.greadWeightsGroupBox.Text = "Gread Weights";
@@ -85,7 +87,7 @@ namespace Class_Grading
             this.greadWeightsFlowLayoutPanel.Location = new System.Drawing.Point(3, 22);
             this.greadWeightsFlowLayoutPanel.Name = "greadWeightsFlowLayoutPanel";
             this.greadWeightsFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.greadWeightsFlowLayoutPanel.Size = new System.Drawing.Size(683, 70);
+            this.greadWeightsFlowLayoutPanel.Size = new System.Drawing.Size(715, 70);
             this.greadWeightsFlowLayoutPanel.TabIndex = 0;
             // 
             // label1
@@ -156,60 +158,85 @@ namespace Class_Grading
             // 
             // dataGridGroupBox
             // 
-            this.dataGridGroupBox.Controls.Add(this.studentInfoDataGridView);
+            this.dataGridGroupBox.Controls.Add(this.studentGradesDataGridView);
             this.dataGridGroupBox.Location = new System.Drawing.Point(15, 113);
             this.dataGridGroupBox.Name = "dataGridGroupBox";
-            this.dataGridGroupBox.Size = new System.Drawing.Size(686, 448);
+            this.dataGridGroupBox.Size = new System.Drawing.Size(718, 448);
             this.dataGridGroupBox.TabIndex = 1;
             this.dataGridGroupBox.TabStop = false;
             // 
-            // studentInfoDataGridView
+            // studentGradesDataGridView
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.studentInfoDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.studentInfoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.studentInfoDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
-            this.studentInfoDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.studentInfoDataGridView.Location = new System.Drawing.Point(3, 16);
-            this.studentInfoDataGridView.Name = "studentInfoDataGridView";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.studentInfoDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.studentInfoDataGridView.Size = new System.Drawing.Size(680, 429);
-            this.studentInfoDataGridView.TabIndex = 0;
-            this.studentInfoDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentInfoDataGridView_CellValueChanged);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.studentGradesDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.studentGradesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.studentGradesDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.studentGradesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.studentGradesDataGridView.Location = new System.Drawing.Point(3, 16);
+            this.studentGradesDataGridView.Name = "studentGradesDataGridView";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.studentGradesDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.studentGradesDataGridView.Size = new System.Drawing.Size(712, 429);
+            this.studentGradesDataGridView.TabIndex = 0;
+            this.studentGradesDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentGradesDataGridView_CellValueChanged);
             // 
             // statsGroupBox
             // 
+            this.statsGroupBox.Controls.Add(this.passRateLabel);
+            this.statsGroupBox.Controls.Add(this.passRateTextBox);
             this.statsGroupBox.Controls.Add(this.label6);
-            this.statsGroupBox.Controls.Add(this.textBox2);
-            this.statsGroupBox.Controls.Add(this.textBox1);
+            this.statsGroupBox.Controls.Add(this.studentsCountTextBox);
+            this.statsGroupBox.Controls.Add(this.classAverageTextBox);
             this.statsGroupBox.Controls.Add(this.label5);
             this.statsGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statsGroupBox.Location = new System.Drawing.Point(15, 596);
             this.statsGroupBox.Name = "statsGroupBox";
-            this.statsGroupBox.Size = new System.Drawing.Size(676, 83);
+            this.statsGroupBox.Size = new System.Drawing.Size(718, 83);
             this.statsGroupBox.TabIndex = 2;
             this.statsGroupBox.TabStop = false;
             this.statsGroupBox.Text = "Stats";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(239, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(121, 20);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Students Count";
+            // 
+            // studentsCountTextBox
+            // 
+            this.studentsCountTextBox.Location = new System.Drawing.Point(365, 31);
+            this.studentsCountTextBox.Name = "studentsCountTextBox";
+            this.studentsCountTextBox.Size = new System.Drawing.Size(100, 26);
+            this.studentsCountTextBox.TabIndex = 2;
+            // 
+            // classAverageTextBox
+            // 
+            this.classAverageTextBox.Location = new System.Drawing.Point(120, 31);
+            this.classAverageTextBox.Name = "classAverageTextBox";
+            this.classAverageTextBox.Size = new System.Drawing.Size(100, 26);
+            this.classAverageTextBox.TabIndex = 1;
             // 
             // label5
             // 
@@ -221,28 +248,21 @@ namespace Class_Grading
             this.label5.TabIndex = 0;
             this.label5.Text = "Class Average";
             // 
-            // textBox1
+            // passRateLabel
             // 
-            this.textBox1.Location = new System.Drawing.Point(120, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 1;
+            this.passRateLabel.AutoSize = true;
+            this.passRateLabel.Location = new System.Drawing.Point(482, 31);
+            this.passRateLabel.Name = "passRateLabel";
+            this.passRateLabel.Size = new System.Drawing.Size(83, 20);
+            this.passRateLabel.TabIndex = 5;
+            this.passRateLabel.Text = "Pass Rate";
             // 
-            // textBox2
+            // passRateTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(296, 28);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 26);
-            this.textBox2.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(239, 31);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 20);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "label6";
+            this.passRateTextBox.Location = new System.Drawing.Point(571, 31);
+            this.passRateTextBox.Name = "passRateTextBox";
+            this.passRateTextBox.Size = new System.Drawing.Size(100, 26);
+            this.passRateTextBox.TabIndex = 4;
             // 
             // MainForm
             // 
@@ -262,7 +282,7 @@ namespace Class_Grading
             ((System.ComponentModel.ISupportInitialize)(this.midtermNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalNumericUpDown)).EndInit();
             this.dataGridGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.studentInfoDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentGradesDataGridView)).EndInit();
             this.statsGroupBox.ResumeLayout(false);
             this.statsGroupBox.PerformLayout();
             this.ResumeLayout(false);
@@ -282,12 +302,14 @@ namespace Class_Grading
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown finalNumericUpDown;
         private System.Windows.Forms.GroupBox dataGridGroupBox;
-        private System.Windows.Forms.DataGridView studentInfoDataGridView;
+        private System.Windows.Forms.DataGridView studentGradesDataGridView;
         private System.Windows.Forms.GroupBox statsGroupBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox studentsCountTextBox;
+        private System.Windows.Forms.TextBox classAverageTextBox;
+        private System.Windows.Forms.Label passRateLabel;
+        private System.Windows.Forms.TextBox passRateTextBox;
     }
 }
 
